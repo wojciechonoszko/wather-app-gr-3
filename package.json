@@ -10,8 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wojciechonoszko/weather-app-gr-3.git"
-    
+    "url": "git+https://github.com/wojciechonoszko/weather-app-gr-3"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
@@ -27,6 +26,8 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "html-react-parser": "^1.4.10"
+    "axios": "^0.26.1",
+    "notiflix": "^3.2.5",
+    "simplelightbox": "^2.10.3"
   }
 }
