@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,6 +22,32 @@
     <link rel="stylesheet" href="/sass/main.css" />
   </head>
   <body>
-    <script src="./index.js"></script>
+    <div class="containertrial">
+      <div class="citySearch">
+        <form class="citySearch__form">
+          <input type="text" placeholder="Enter the city" class="citySearch__form__input" />
+        </form>
+      </div>
+      <div class="citySearch__favouriteCities">
+        <ul class="favouriteCities">
+          <li class="favouriteCities__item">
+            <span class="city1">Kyiv</span>
+          </li>
+          <li class="favouriteCities__item">
+            <span class="favouriteCities__name">Paris</span>
+          </li>
+          <li class="favouriteCities__item">
+            <span class="favouriteCities__name">Paris</span>
+          </li>
+          <li class="favouriteCities__item">
+            <span class="favouriteCities__name">Paris</span>
+          </li>
+        </ul>
+        <div class="citySearch__arrow">
+          <img src="/images/icons/arrow.svg" alt="" class="cirkle__icon" width="4px" height="8px" />
+        </div>
+      </div>
+    </div>
+    <script src="/index.js"></script>
   </body>
 </html>

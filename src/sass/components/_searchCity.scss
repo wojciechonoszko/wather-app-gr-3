@@ -1,0 +1,120 @@
+.containertrial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 280px;
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+}
+
+.citySearch {
+  position: relative;
+  &__form {
+    @media (min-width: 768px) {
+      margin: 0 auto;
+    }
+    &__input {
+      width: 280px;
+      padding: 15px 0px 16px 57px;
+      border-radius: 30px;
+      letter-spacing: 0.04em;
+      line-height: 1.21;
+      margin-top: 30px;
+
+      @media (min-width: 768px) {
+        width: 500px;
+        margin-top: 60px;
+        font-size: 18px;
+        line-height: 1.2;
+      }
+      @media (min-width: 1280px) {
+        margin-top: 79px;
+        width: 520px;
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    bottom: 13px;
+    right: 20px;
+    background-image: url('/images/icons/star.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    @media (min-width: 768px) {
+      left: 458px;
+    }
+    @media (min-width: 1280px) {
+      left: 478px;
+    }
+  }
+  &::after {
+    content: '';
+    width: 22px;
+    height: 22px;
+    bottom: 13px;
+    left: 20px;
+    background-image: url('/images/icons/geolocation.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    @media (min-width: 768px) {
+      bottom: 16px;
+    }
+  }
+
+  &__favouriteCities {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  &__arrow {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.favouriteCities {
+  display: flex;
+  align-items: center;
+  &__item {
+    position: relative;
+    background: rgba(16, 33, 54, 0.5);
+    border-radius: 20px;
+    text-decoration: underline;
+    margin-right: 10px;
+    padding: 6px 30px 6px 12px;
+    font-size: 12px;
+  }
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 14px;
+  }
+  &__name {
+    &::after {
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-image: url('/images/icons/close.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 10px;
+      right: 10px;
+    }
+  }
+}
