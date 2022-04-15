@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.link {
+  text-decoration: none;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: 0.08em;
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-input-placeholder {
+  color: #000000;
+  opacity: 1;
+  letter-spacing: 0.04em;
+}
+
+:-ms-input-placeholder {
+  color: #000000;
+  opacity: 1;
+  letter-spacing: 0.04em;
+}
+
+::-ms-input-placeholder {
+  color: #000000;
+  opacity: 1;
+  letter-spacing: 0.04em;
+}
+
+::placeholder {
+  color: #000000;
+  opacity: 1;
+  letter-spacing: 0.04em;
+}
+
+button, input {
+  border: none;
+}
+
+body {
+  background-image: url("/images/first-page/bg-image.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+/*# sourceMappingURL=main.css.map */
