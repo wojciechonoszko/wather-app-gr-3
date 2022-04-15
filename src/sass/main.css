@@ -258,4 +258,40 @@ body {
   top: 10px;
   right: 10px;
 }
+
+.quote {
+  text-align: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.quote__example {
+  font-style: italic;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .quote__example {
+    font-size: 22px;
+  }
+}
+
+.quote__author-name {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@media (min-width: 768px) {
+  .quote {
+    width: 379px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .quote {
+    position: absolute;
+    right: 110px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
