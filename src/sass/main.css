@@ -457,4 +457,367 @@ body {
   margin: 0 10px;
 }
 
+/* Sekcja Weather  1 DAY 5 DAYS */
+
+.containerweather {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 280px;
+}
+
+
+
+
+
+
+@media (min-width: 768px) {
+  .containerweather {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .containerweather {
+    max-width: 1280px;
+  }
+}
+
+.weather {
+  position: relative;
+
+}
+
+@media (min-width: 320px) {
+  .weather__form {
+    margin: 0 auto;
+  }
+}
+
+.weather__form__input {
+  width: 280px;
+  padding: 70px 0px 94px 90px;
+  border-radius: 30px;
+  letter-spacing: 0.04em;
+  line-height: 1.21;
+  margin-top: 30px;
+  background-color: #102136;
+
+
+
+
+}
+
+
+@media (min-width: 320px) {
+  .weather__form__input {
+    width: 280px;
+    height: 190px;
+    margin-top: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+  }
+}
+
+@media (min-width: 768px) {
+  .weather__form__input {
+    width: 500px;
+    height: 300px;
+    margin-top: 110px;
+    margin-left: 134px;
+    margin-right: 134px;
+
+  }
+}
+
+@media (min-width: 1280px) {
+  .weather__form__input {
+    margin-top: 132px;
+    width: 450px;
+    height: 300px;
+    margin-left: 830px;
+    margin-right: 0px;
+
+
+
+
+  }
+}
+
+.weather::before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  bottom: 13px;
+  right: 20px;
+  background-image: ;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+@media (min-width: 768px) {
+  .weather::before {
+    left: 458px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .weather::before {
+    left: 478px;
+  }
+}
+
+.weather::after {
+  content: '';
+  width: 22px;
+  height: 22px;
+  bottom: 13px;
+  left: 20px;
+  background-image: ;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+@media (min-width: 768px) {
+  .weather::after {
+    bottom: 16px;
+  }
+}
+
+
+
+
+.buttonsweather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 21px;
+}
+
+
+.buttons {
+  display: flex;
+  align-items: center;
+  width: 126px;
+  height: 27px;
+}
+
+.buttons_item {
+  position: static;
+
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 6px 30px 6px 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  color: #000000;
+
+}
+
+@media (min-width: 320px) {
+  .buttons {
+    font-size: 14px;
+
+    margin-left: 25px;
+    margin-right: 169px;
+
+  }
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    font-size: 14px;
+    margin-right: 393px;
+    margin-left: 249px;
+
+  }
+}
+
+@media (min-width: 1280px) {
+  .buttons {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-right: 254px;
+    margin-left: 900px;
+  }
+}
+
+.buttons::after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 10px;
+  right: 10px;
+
+}
+
+.buttons_item::after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 10px;
+  right: 10px;
+}
+
+.buttonname1 {
+
+  background: #FFFFFF;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 12px;
+}
+
+.buttonname2 {
+
+  background: #FFFFFF80;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 12px;
+}
+
+
+.napis {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #767D85;
+
+}
+
+
+
+
+.napisy {
+
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 20px;
+}
+
+@media (min-width: 320px) {
+  .napisy {
+    font-size: 14px;
+    margin-left: 170px;
+    margin-top: -60px;
+
+  }
+}
+
+@media (min-width: 768px) {
+  .napisy {
+    font-size: 18px;
+    margin-left: 974px;
+    margin-top: -110px;
+
+  }
+}
+
+@media (min-width: 1280px) {
+  .napisy {
+    font-size: 18px;
+    margin-left: 974px;
+    margin-top: -110px;
+
+
+
+  }
+}
+
+
+.min {
+
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 12px;
+
+}
+
+.max {
+
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 12px;
+}
+
+
+
+
+/*comment 
+.chmurka {
+
+position: absolute;
+  content: '';
+    width: 29.14px;
+    height: 18.29px; 
+background-image: url("/images/icons/chmurka.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+
+@media (min-width: 320px) {
+  .chmurka {
+    font-size: 14px;
+
+    margin-left: 25px;
+    margin-right: 169px;
+
+  }
+}
+
+@media (min-width: 768px) {
+  .chmurka {
+    font-size: 14px;
+    margin-right: 393px;
+    margin-left: 249px;
+
+  }
+}
+
+@media (min-width: 1280px) {
+  .chmurka {
+  bottom: 310px;
+    margin-right: 254px;
+    margin-left: 1017px;
+   
+  }
+}
+
+
+/*comment */
+
 /*# sourceMappingURL=main.css.map */
