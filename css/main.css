@@ -55,8 +55,7 @@ a {
   letter-spacing: 0.04em;
 }
 
-button,
-input {
+button, input {
   border: none;
 }
 
@@ -309,8 +308,7 @@ body {
   text-align: center;
 }
 
-.city__btn--today,
-.city__btn--5days {
+.city__btn--today, .city__btn--5days {
   font-size: 14px;
   font-weight: 700;
   color: black;
@@ -367,47 +365,34 @@ body {
   display: flex;
 }
 
-.daysList__item_day,
-.daysList__item_minTemp,
-.daysList__item_maxTemp {
+.daysList__item_day, .daysList__item_minTemp, .daysList__item_maxTemp {
   font-size: 12px;
 }
 
 @media screen and (min-width: 768px) {
-
-  .daysList__item_day,
-  .daysList__item_minTemp,
-  .daysList__item_maxTemp {
+  .daysList__item_day, .daysList__item_minTemp, .daysList__item_maxTemp {
     font-size: 14px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-
-  .daysList__item_day,
-  .daysList__item_minTemp,
-  .daysList__item_maxTemp {
+  .daysList__item_day, .daysList__item_minTemp, .daysList__item_maxTemp {
     font-size: 18px;
   }
 }
 
-.daysList__item_date,
-.daysList__item_valueMax {
+.daysList__item_date, .daysList__item_valueMax {
   font-size: 16px;
 }
 
 @media screen and (min-width: 768px) {
-
-  .daysList__item_date,
-  .daysList__item_valueMax {
+  .daysList__item_date, .daysList__item_valueMax {
     font-size: 18px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-
-  .daysList__item_date,
-  .daysList__item_valueMax {
+  .daysList__item_date, .daysList__item_valueMax {
     font-size: 25px;
   }
 }
@@ -456,5 +441,4 @@ body {
 .separator {
   margin: 0 10px;
 }
-
 /*# sourceMappingURL=main.css.map */
