@@ -6,7 +6,8 @@
         "base/_style.scss",
         "layout/_body.scss",
         "components/_searchCity.scss",
-        "components/_quote.scss"
+        "components/_quote.scss",
+        "components/_weatherbuttons.scss"
     ],
     "names": [],
     "file": "main.css"
