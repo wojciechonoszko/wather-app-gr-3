@@ -1,6 +1,7 @@
 .quote{
   text-align: right;
   align-items: flex-end;
+  margin-top: 30px;
   &__example {
     font-style: italic;
     font-size: 14px;
@@ -18,6 +19,7 @@
   @media (min-width: 1280px){
       position: absolute;
       right: 110px;
+      bottom: 116px;
       
   }
 }
