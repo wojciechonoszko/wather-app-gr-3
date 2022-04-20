@@ -1,4 +1,8 @@
 import apiService from './basic/api.js';
+import getOneDay from './getOneDay.js';
+import { setBgImages, setGeoLocationImg } from './bg-images'
+
+
 const searchInput = document.querySelector('.citySearch__form');
 const inputRef = document.querySelector('.citySearch__form__input');
 
@@ -16,7 +20,7 @@ function setQuery(even){
   const inputData = inputRef.value;
   apiService.query = inputData;
 
-  // getOneDay();
+   getOneDay();
   // getCalendar();
   // getFiveDays();
   // onHideChartClick();

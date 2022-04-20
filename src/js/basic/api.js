@@ -24,7 +24,16 @@ getData(collection) {
   });
 }
 //metoda do uzyskania obrazow z pixabay -- do zaimplementowania
+getImages() {
+  const bgUrlIcon = `${this.bgIconUrl}${this.location}&page=1&per_page=12&key=${this.bgKeyImg}`;
 
+  return fetch(bgUrlIcon).then(res => {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject('Picture not found');
+  });
+}
 //setter do uzyskania aktualnej lokalizacji po naciśnięciu enter
 set query(newLocation) {
   this.location = newLocation;
