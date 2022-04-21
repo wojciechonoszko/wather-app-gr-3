@@ -48,43 +48,43 @@
           height="18"
         />
       </div>
-      <div class="favCity">
-        
+      <div class="favCity"></div>
+    </div>
+
+    <!-- to jest div z wybranym miastem i jego bieżącą pogodą, w scss style są pod _currentDay.scss -->
+    <div class="currentDay">
+      <div class="wrapper currentDay__wrapper">
+        <div class="currentDay__box">
+          <!-- ikona -->
+          <img class="currentDay__icon" src="images/weather/cloud.svg" width="35px" height="25px" />
+          <!-- div z wybraną nazwą miasta -->
+          <div class="currentDay__cityname">Kyiv, UA</div>
+        </div>
+        <div class="currentDay__values">
+          <!-- div z bieżącą temperaturą -->
+          <p class="currentDay__temperature">-3</p>
+          <div class="currentDay__values__container">
+            <!-- div z minimalną temperaturą -->
+            <div class="currentDay__temperature__min">
+              <p class="currentDay__temperature__text">min</p>
+              <p class="currentDay__temperature__min">-2°</p>
+            </div>
+            <!-- div z maxymalną temperaturą -->
+            <div class="currentDay__temperature__max">
+              <p class="currentDay__temperature__text">max</p>
+              <p class="currentDay__temperature__max">1°</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    
-
-    <!-- ////////////// Sekcja Weather Today 5days  /////////////////// -->
-
-    <div class="containerweather">
-      <div class="weather">
-        
-          <input type="text"  class="weather__form__input" />
-        </form>
+    <div class="daysButtons">
+      <div class="wrapper daysButtons__wrapper">
+        <button class="daysButtons__today daysButtons--active" type="button">today</button>
+        <button class="daysButtons__5days" type="button">5 days</button>
       </div>
-      <div class="weather">
-<div class="napisy">      
-          <ul class="napis">
-           <span class="min">min</span>
-           </li>
-          <li class="napis">
-            <span class="max">max</span>
-          </li>
-          </ul>
-          </div>
-
-          <div class="buttonsweather">
-        <ul class="buttons">
-          <li class="buttons_item">
-            <span class="buttonname1">TODAY</span>
-          </li>
-          <li class="buttons_item">
-            <span class="buttonname2">5DAYS</span>
-          </li>
-          </ul>
-          </div>
-          </div>
+    </div>
 
     <!-- ////////////// Sekcja 5 days /////////////////// -->
 

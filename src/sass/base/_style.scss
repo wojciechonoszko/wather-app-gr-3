@@ -49,11 +49,12 @@ a {
 
 ::placeholder {
   color: #000000;
-  opacity: 1; 
+  opacity: 1;
   letter-spacing: 0.04em;
 }
 
-button, input {
+button,
+input {
   border: none;
 }
 
@@ -62,9 +63,9 @@ button, input {
   width: 100%;
   max-width: 280px;
   @media (min-width: 768px) {
-      max-width: 500px;
+    max-width: 500px;
   }
   @media (min-width: 1280px) {
-      max-width: 520px;
+    max-width: 520px;
   }
 }
