@@ -1,0 +1,44 @@
+// div ze stylami do inputu
+.citySearch {
+  &__wrapper {
+    position: relative;
+  }
+  &__input {
+    height: 48px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.21;
+
+    background: #ffffff;
+    border-radius: 30px;
+    padding-left: 57px;
+    margin-top: 30px;
+    @media (min-width: 768px) {
+      margin-top: 60px;
+    }
+    @media (min-width: 1280px) {
+      margin-top: 79px;
+    }
+  }
+  &__icon {
+    &--geolocation,
+    &--star {
+      position: absolute;
+      width: auto;
+      top: 45px;
+      @media (min-width: 768px) {
+          top: 73px;
+      }
+      @media (min-width: 1280px) {
+          top: 94px;
+      }
+    }
+    &--geolocation {
+      left: 22px;
+    }
+    &--star {
+      right: 13px;
+    }
+  }
+}
+
