@@ -40,3 +40,7 @@ const savedArray = JSON.parse(localStorage.getItem('City'));
 if (savedArray) {
   storage.cityArray = savedArray;
 }
+
+
+
+

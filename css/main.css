@@ -218,9 +218,144 @@ body {
   right: 10px;
 }
 
+.calendar {
+  text-align: center;
+  width: 280px;
+  height: 190px;
+  background-color: rgba(16, 33, 54, 0.8);
+  border-radius: 34px;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .calendar {
+    margin-top: 40px;
+    width: 500px;
+    height: 278px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar {
+    border-radius: 0px;
+    width: 630px;
+    height: 278px;
+    text-align: left;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__container {
+    display: flex;
+  }
+}
+
+.calendar__day {
+  font-weight: 300;
+  font-size: 45px;
+  line-height: 1.2;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .calendar__day {
+    font-size: 90px;
+    line-height: 1.2;
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__day {
+    margin-left: 110px;
+  }
+}
+
+.calendar__month-and-hour, .calendar__time {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-top: 10px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .calendar__month-and-hour, .calendar__time {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__month-and-hour, .calendar__time {
+    margin-top: 10px;
+    margin-left: 110px;
+  }
+}
+
+.calendar__time {
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .calendar__time {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__time {
+    margin-top: 10px;
+    margin-left: 40px;
+  }
+}
+
+.calendar__month, .calendar__sunrise {
+  margin-right: 20px;
+}
+
+@media (min-width: 1280px) {
+  .calendar__month, .calendar__sunrise {
+    margin-right: 40px;
+  }
+}
+
+.calendar__icon-sunset, .calendar__icon-sunrise {
+  margin-right: 10px;
+}
+
+.calendar__sunset::before, .calendar__hour::before {
+  content: '';
+  height: 22px;
+  width: 1px;
+  background-image: url("/images/icons/line.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 140px;
+  background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .calendar__sunset::before, .calendar__hour::before {
+    right: 250px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__sunset::before, .calendar__hour::before {
+    left: 100px;
+  }
+}
+
 .quote {
   text-align: right;
   align-items: flex-end;
+  margin-top: 30px;
 }
 
 .quote__example {
@@ -249,6 +384,7 @@ body {
   .quote {
     position: absolute;
     right: 110px;
+    bottom: 116px;
   }
 }
 
@@ -328,7 +464,7 @@ body {
   background-color: rgba(16, 33, 54, 0.8);
   width: 100%;
   width: 280px;
-  height: 270px;
+  height: 540px;
 }
 
 @media screen and (min-width: 768px) {
@@ -358,7 +494,7 @@ body {
 }
 
 .daysList__item {
-  margin: 0;
+  margin: 10px;
 }
 
 .daysList__item_minMax {
@@ -412,6 +548,7 @@ body {
 .daysList__item_value {
   display: flex;
   font-size: 14px;
+  color: #FF6B09;
 }
 
 @media screen and (min-width: 768px) {
@@ -440,5 +577,261 @@ body {
 
 .separator {
   margin: 0 10px;
+}
+
+.containerweather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 280px;
+}
+
+@media (min-width: 768px) {
+  .containerweather {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .containerweather {
+    max-width: 1280px;
+  }
+}
+
+.weather {
+  position: relative;
+}
+
+@media (min-width: 320px) {
+  .weather__form {
+    margin: 0 auto;
+  }
+}
+
+.weather__form__input {
+  width: 280px;
+  padding: 70px 0px 94px 90px;
+  border-radius: 30px;
+  letter-spacing: 0.04em;
+  line-height: 1.21;
+  margin-top: 30px;
+  background-color: #102136;
+}
+
+@media (min-width: 320px) {
+  .weather__form__input {
+    width: 280px;
+    height: 190px;
+    margin-top: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .weather__form__input {
+    width: 500px;
+    height: 300px;
+    margin-top: 110px;
+    margin-left: 134px;
+    margin-right: 134px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .weather__form__input {
+    margin-top: 132px;
+    width: 450px;
+    height: 300px;
+    margin-left: 830px;
+    margin-right: 0px;
+  }
+}
+
+.weather::before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  bottom: 13px;
+  right: 20px;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+@media (min-width: 768px) {
+  .weather::before {
+    left: 458px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .weather::before {
+    left: 478px;
+  }
+}
+
+.weather::after {
+  content: '';
+  width: 22px;
+  height: 22px;
+  bottom: 13px;
+  left: 20px;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+@media (min-width: 768px) {
+  .weather::after {
+    bottom: 16px;
+  }
+}
+
+.buttons_item {
+  position: static;
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 6px 30px 6px 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  color: #000000;
+}
+
+@media (min-width: 320px) {
+  .buttons {
+    font-size: 14px;
+    margin-left: 25px;
+    margin-right: 169px;
+  }
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    font-size: 14px;
+    margin-right: 393px;
+    margin-left: 249px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .buttons {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-right: 254px;
+    margin-left: 900px;
+  }
+}
+
+.buttons::after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 10px;
+  right: 10px;
+}
+
+.buttons_item::after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 10px;
+  right: 10px;
+}
+
+.napisy {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 20px;
+}
+
+@media (min-width: 320px) {
+  .napisy {
+    font-size: 14px;
+    margin-left: 170px;
+    margin-top: -60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .napisy {
+    font-size: 18px;
+    margin-left: 974px;
+    margin-top: -110px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .napisy {
+    font-size: 18px;
+    margin-left: 974px;
+    margin-top: -110px;
+  }
+}
+
+.more-info {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+  .more-info {
+    overflow: scroll;
+  }
+}
+
+.more-info__list {
+  padding-top: 8px;
+  list-style: none;
+  min-width: 120px;
+  height: 220px;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.541176);
+  border: 1px solid rgba(255, 255, 255, 0.541176);
+  border-radius: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.more-info__list_temp {
+  color: #FF6B09;
+  font-size: 25px;
+}
+
+.more-info__icon {
+  height: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.more-info__data_pressure, .more-info__data_humidity, .more-info__data_wind {
+  display: flex;
+  margin: 10px;
+}
+
+.pressure,
+.humidity,
+.wind {
+  height: 20px;
+  width: 18px;
+  fill: rgba(255, 255, 255, 0.541176);
+}
+
+.pressure_value,
+.humidity_value,
+.wind_value {
+  padding-left: 15px;
 }
 /*# sourceMappingURL=main.css.map */
