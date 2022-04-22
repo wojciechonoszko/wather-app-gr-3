@@ -1,0 +1,39 @@
+.daysButtons {
+  margin-top: 31px;
+  @media (min-width: 768px) {
+    margin-top: 41px;
+  }
+  @media (min-width: 1280px) {
+    margin-top: 21px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    @media (min-width: 768px) {
+      justify-content: center;
+    }
+    @media (min-width: 1280px) {
+      margin-right: 0;
+
+    }
+  }
+  &__today,
+  &__5days {
+      width: 126px;
+      height: 27px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: uppercase;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.5);;
+    }
+    &--active {
+      background-color: #ffffff;
+    }
+    &__today {
+        @media (min-width: 768px) {
+            margin-right: 18px;
+        }
+  }
+}
