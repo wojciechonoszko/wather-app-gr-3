@@ -1,0 +1,105 @@
+.calendar {
+  margin-top: 30px;
+  &__wrapper {
+    width: 280px;
+    height: 190px;
+    background-color: rgba(16, 33, 54, 0.8);
+    border-radius: 34px;
+    @media (min-width: 768px) {
+      width: 500px;
+      height: 278px;
+    }
+    @media (min-width: 1280px) {
+      position: absolute;
+      bottom: 0px;
+      border-radius: 0px 34px 0px 0px;
+    }
+  }
+  &__current-day {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 45px;
+    line-height: 1.2;
+    font-weight: 300;
+    @media (min-width: 768px) {
+      font-size: 90px;
+    }
+  }
+  &__valueContainer {
+    margin-top: 13px;
+    @media (min-width: 1280px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__time,
+  &__sunTime {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 17px;
+    @media (min-width: 768px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__time {
+    position: relative;
+    @media (min-width: 1280px) {
+      margin-right: 45px;
+    }
+    &__month {
+      margin-right: 20px;
+    }
+    &__hour {
+      &::before {
+        position: absolute;
+        left: 140px;
+        content: '';
+        height: 22px;
+        width: 2px;
+        background-image: url(/images/icons/line.svg);
+        @media (min-width: 768px) {
+          left: 250px;
+        }
+        @media (min-width: 1280px){
+            left: 90px;
+        }
+      }
+    }
+  }
+  &__sunTime {
+    position: relative;
+    margin-top: 25px;
+    @media (min-width: 1280px) {
+      margin-top: 0;
+    }
+    &__icon {
+      &--sunrise,
+      &--sunset {
+        width: auto;
+        margin-right: 10px;
+      }
+    }
+    &__sunrise {
+      margin-right: 20px;
+    }
+    &__sunset {
+      &::before {
+        position: absolute;
+        left: 140px;
+        content: '';
+        height: 22px;
+        width: 2px;
+        background-image: url(/images/icons/line.svg);
+        @media (min-width: 768px) {
+          left: 250px;
+        }
+        @media (min-width: 1280px){
+            left: 90px;
+        }
+      }
+    }
+  }
+}
