@@ -1,3 +1,2 @@
-import './js/basic/api.js';
-import './js/citySearch.js'
-import './js/quotes';
+//import './js/quotes.js';
+import './js/getWeather.js';
