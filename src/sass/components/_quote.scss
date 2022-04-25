@@ -1,0 +1,26 @@
+.quote {
+    margin-top: 44px;
+    text-align: right;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    @media (min-width: 768px) {
+      font-size: 22px;
+    }
+    &__wrapper {
+      @media (min-width: 768px) {
+        width: 380px;
+      }
+      @media (min-width: 1280px) {
+        margin: 95px 110px 172px auto;
+      }
+    }
+    &__authorName {
+      margin-top: 15px;
+      font-style: normal;
+      font-size: 18px;
+      @media (min-width: 768px) {
+        width: 380px;
+      }
+    }
+  }

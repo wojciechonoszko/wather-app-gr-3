@@ -104,6 +104,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  height: 100vh;
 }
 
 .citySearch__wrapper {
@@ -351,6 +352,193 @@ body {
 @media (min-width: 768px) {
   .daysButtons__today {
     margin-right: 18px;
+  }
+}
+
+.calendar {
+  margin-top: 30px;
+}
+
+.calendar__wrapper {
+  width: 280px;
+  height: 190px;
+  background-color: rgba(16, 33, 54, 0.8);
+  border-radius: 34px;
+}
+
+@media (min-width: 768px) {
+  .calendar__wrapper {
+    width: 500px;
+    height: 278px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__wrapper {
+    position: absolute;
+    bottom: 0px;
+    border-radius: 0px 34px 0px 0px;
+  }
+}
+
+.calendar__current-day {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 45px;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .calendar__current-day {
+    font-size: 90px;
+  }
+}
+
+.calendar__valueContainer {
+  margin-top: 13px;
+}
+
+@media (min-width: 1280px) {
+  .calendar__valueContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.calendar__time, .calendar__sunTime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media (min-width: 768px) {
+  .calendar__time, .calendar__sunTime {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.calendar__time {
+  position: relative;
+}
+
+@media (min-width: 1280px) {
+  .calendar__time {
+    margin-right: 45px;
+  }
+}
+
+.calendar__time__month {
+  margin-right: 20px;
+}
+
+.calendar__time__hour::before {
+  position: absolute;
+  left: 140px;
+  content: '';
+  height: 22px;
+  width: 2px;
+  background-image: url(/images/icons/line.svg);
+}
+
+@media (min-width: 768px) {
+  .calendar__time__hour::before {
+    left: 250px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__time__hour::before {
+    left: 90px;
+  }
+}
+
+.calendar__sunTime {
+  position: relative;
+  margin-top: 25px;
+}
+
+@media (min-width: 1280px) {
+  .calendar__sunTime {
+    margin-top: 0;
+  }
+}
+
+.calendar__sunTime__icon--sunrise, .calendar__sunTime__icon--sunset {
+  width: auto;
+  margin-right: 10px;
+}
+
+.calendar__sunTime__sunrise {
+  margin-right: 20px;
+}
+
+.calendar__sunTime__sunset::before {
+  position: absolute;
+  left: 140px;
+  content: '';
+  height: 22px;
+  width: 2px;
+  background-image: url(/images/icons/line.svg);
+}
+
+@media (min-width: 768px) {
+  .calendar__sunTime__sunset::before {
+    left: 250px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__sunTime__sunset::before {
+    left: 90px;
+  }
+}
+
+.quote {
+  margin-top: 44px;
+  text-align: right;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .quote {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 768px) {
+  .quote__wrapper {
+    width: 380px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .quote__wrapper {
+    margin: 95px 110px 172px auto;
+  }
+}
+
+.quote__authorName {
+  margin-top: 15px;
+  font-style: normal;
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .quote__authorName {
+    width: 380px;
   }
 }
 
