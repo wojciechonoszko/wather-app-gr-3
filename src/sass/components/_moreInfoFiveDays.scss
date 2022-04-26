@@ -1,0 +1,62 @@
+.hours-weather {
+    padding-bottom: 15px;
+}
+.more-info {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+
+     @media screen and (max-width: 1280px) {
+        overflow: scroll;
+    }
+    
+
+    &__list {
+    padding-top: 8px;
+    list-style: none;
+    min-width: 120px;
+    height: 220px;
+    font-size: 14px;
+    text-align: center;
+    color: hsla(0,0%,100%,.5411764705882353);
+    border: 1px solid hsla(0,0%,100%,.5411764705882353);
+    border-radius: 25px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+        &_temp {
+            color: #FF6B09;
+            font-size: 25px;
+        }
+
+    }
+
+    &__icon {
+        height: 25px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    &__data {
+        &_pressure,
+        &_humidity,
+        &_wind {
+            display: flex ;
+            margin: 10px;
+        }
+    }
+}
+
+.pressure,
+.humidity,
+.wind {
+    height: 20px;
+    width: 18px;
+    fill: hsla(0,0%,100%,.5411764705882353);
+}
+
+.pressure_value,
+.humidity_value,
+.wind_value {
+    padding-left: 15px;
+}
