@@ -31,6 +31,303 @@
   }
 
 
+
+
+  body {
+    background-color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.chart-show-link.is-closed {
+  display: none;
+}
+
+.chart-show-link {
+    /* display: inline; */
+    position: relative;
+    width: 120px;
+    height: 18px;
+    background-color: initial;
+    padding: 0;
+    border: none;
+    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: .82;
+    color: #ff6b09;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .is-closed {
+    display: none;
+  }
+  
+  .chart-cnt,
+  .chart-main-container {
+    position: relative;
+    padding-top: 25px;
+    width: 320px;
+    height: 580px;
+    background: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+    border-radius: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
+    padding-left: 15px;
+  }
+    @media screen and (min-width: 768px) {
+      .chart-cnt { 
+      width: 620px;
+      height: 580px;
+      padding: 20px;}
+    }
+    @media screen and (min-width: 1280px) {
+      .chart-cnt {
+      width: 1060px;
+      height: 580px;}
+    }
+  
+  
+  .chart-hide-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+  }
+  .chart-show-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .chart-show-link,
+  .chart-hide-link {
+    display: inline;
+    position: relative;
+    width: 120px;
+    height: 18px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 0.82;
+    align-items: center;
+    color: #ff6b09;
+    align-items: center;
+    cursor: pointer;
+  }
+  .chart-hide-link::after,
+  .chart-show-link::after {
+    margin-left: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    content: url('../images/arrow-up.png');
+    position: absolute;
+    top: -6px;
+    transform: rotate(180deg);
+  }
+  .chart-show-link::after{
+    content: url('../images/arrow-down.png');
+    transform: rotate(0deg);
+    background-color: black;
+  }
+  .chart-hide-link:hover,
+  .chart-show-link:hover {
+      text-decoration-line: underline;
+  }
+  .chart-hide-link:hover::after,
+  .chart-show-link:hover::after {
+        
+        background-color: rgb(109, 105, 105);
+        animation-name: spin1;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    
+  .chart-hide-link:hover::after {
+      text-decoration-line: underline;
+        background-color: rgb(109, 105, 105);
+        animation-name: spin2;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    
+  
+  
+  @keyframes spin1 {
+    0% {
+      transform: rotate(90deg);
+    }
+  
+    100% {
+      transform: rotate(450deg);
+    }
+  }
+  @keyframes spin2 {
+    0% {
+      transform: rotate(-90deg);
+    }
+  
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+  
+  .icon-arrow-up {
+    display: block;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    margin-top: 20px;
+    @media screen and (min-width: 768px) {
+      margin-right: auto;
+    }
+  }
+  
+  .canvas-wrapper {
+    position: relative;
+    height: 95%;
+    width: 100%;
+  }
+
+
+
+.show-five-days-btn {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px 12px;
+margin: 10px;
+
+position: relative;
+width: 126px;
+height: 28px;
+left: 1044px;
+
+
+background: #FFFFFF;
+border-radius: 20px;
+  
+
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  
+  color: #000000;
+  }
+
+.five-days-list {
+  display: flex;
+  position: relative;
+width: 1060px;
+height: 308px;
+left: 110px;
+
+margin-left:auto;
+margin-right:auto;
+
+background: rgba(16, 33, 54, 0.8);
+box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
+border-radius: 34px;
+}
+ul {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.hum-five-days,
+.date-five-days {
+display:flex;
+justify-content: center;
+margin: 10px;
+padding: 0px;
+list-style-type: none;  
+text-decoration: none;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: 0.04em;
+
+color: #FFFFFF;
+}
+.more-info:hover {
+  color: yellow;
+}
+.more-info {
+  justify-content: center;
+  position: relative;
+  width: 82px;
+  height: 20px;
+  background-color: initial;
+    padding: 0;
+    border: none;
+
+  font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+text-decoration-line: underline;
+
+color: #FFFFFF;
+
+opacity: 0.3;
+}
+
+.icon-five-days {
+  display:flex;
+  justify-content: center;
+    margin: auto;
+    width: 35px;
+    
+    border-radius: 50%;
+    content: url('../images/sunny.png');
+    
+  }
+
+  .temp-five-days {
+    font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 30px;
+/* identical to box height */
+
+display: flex;
+justify-content:center;
+align-items: center;
+text-align: center;
+
+color: #FF6B09;
+  }
+
   
 
   
