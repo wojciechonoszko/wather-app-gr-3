@@ -737,6 +737,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   font-size: 14px;
+  color: #FF6B09;
 }
 
 @media screen and (min-width: 768px) {
@@ -829,5 +830,18 @@ body {
 .humidity_value,
 .wind_value {
   padding-left: 15px;
+}
+
+.btn-schow-chart {
+  text-align: center;
+}
+
+.schow-chart {
+  font-size: 18px;
+  color: #FF6B09;
+  text-align: center;
+  text-decoration: underline;
+  background-color: rgba(16, 33, 54, 0.8);
+
 }
 /*# sourceMappingURL=main.css.map */
