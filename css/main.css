@@ -55,200 +55,437 @@ a {
   letter-spacing: 0.04em;
 }
 
-button, input {
+button,
+input {
   border: none;
 }
 
-body {
-  background-image: url("/images/first-page/bg-image.png");
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.containertrial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.wrapper {
   margin: 0 auto;
   width: 100%;
   max-width: 280px;
 }
 
 @media (min-width: 768px) {
-  .containertrial {
-    max-width: 768px;
+  .wrapper {
+    max-width: 500px;
   }
 }
 
 @media (min-width: 1280px) {
-  .containertrial {
-    max-width: 1280px;
+  .wrapper {
+    max-width: 520px;
   }
 }
 
-.citySearch {
+body {
+  background-image: linear-gradient(0.56deg, #000000 -13.48%, rgba(0, 0, 0, 0) 78.75%), url("/images/first-page/bg-image.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100vh;
+}
+
+.citySearch__wrapper {
   position: relative;
 }
 
-@media (min-width: 768px) {
-  .citySearch__form {
-    margin: 0 auto;
-  }
-}
-
-.citySearch__form__input {
-  width: 280px;
-  padding: 15px 0px 16px 57px;
-  border-radius: 30px;
-  letter-spacing: 0.04em;
+.citySearch__input {
+  height: 48px;
+  width: 100%;
+  font-size: 14px;
   line-height: 1.21;
+  background: #ffffff;
+  border-radius: 30px;
+  padding-left: 57px;
   margin-top: 30px;
 }
 
 @media (min-width: 768px) {
-  .citySearch__form__input {
-    width: 500px;
+  .citySearch__input {
     margin-top: 60px;
-    font-size: 18px;
-    line-height: 1.2;
   }
 }
 
 @media (min-width: 1280px) {
-  .citySearch__form__input {
+  .citySearch__input {
     margin-top: 79px;
-    width: 520px;
   }
 }
 
-.citySearch::before {
-  content: '';
-  width: 22px;
-  height: 22px;
-  bottom: 13px;
-  right: 20px;
-  background-image: url("/images/icons/star.svg");
-  background-repeat: no-repeat;
+.citySearch__icon--geolocation, .citySearch__icon--star {
   position: absolute;
+  width: auto;
+  top: 45px;
 }
 
 @media (min-width: 768px) {
-  .citySearch::before {
-    left: 458px;
+  .citySearch__icon--geolocation, .citySearch__icon--star {
+    top: 73px;
   }
 }
 
 @media (min-width: 1280px) {
-  .citySearch::before {
-    left: 478px;
+  .citySearch__icon--geolocation, .citySearch__icon--star {
+    top: 94px;
   }
 }
 
-.citySearch::after {
-  content: '';
-  width: 22px;
-  height: 22px;
-  bottom: 13px;
-  left: 20px;
-  background-image: url("/images/icons/geolocation.svg");
-  background-repeat: no-repeat;
-  position: absolute;
+.citySearch__icon--geolocation {
+  left: 22px;
+}
+
+.citySearch__icon--star {
+  right: 13px;
+}
+
+.currentDay {
+  margin-top: 45px;
 }
 
 @media (min-width: 768px) {
-  .citySearch::after {
-    bottom: 16px;
-  }
-}
-
-.citySearch__favouriteCities {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-
-.citySearch__arrow {
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.favouriteCities {
-  display: flex;
-  align-items: center;
-}
-
-.favouriteCities__item {
-  position: relative;
-  background: rgba(16, 33, 54, 0.5);
-  border-radius: 20px;
-  text-decoration: underline;
-  margin-right: 10px;
-  padding: 6px 30px 6px 12px;
-  font-size: 12px;
-}
-
-@media (min-width: 768px) {
-  .favouriteCities {
-    font-size: 14px;
+  .currentDay {
+    margin-top: 110px;
   }
 }
 
 @media (min-width: 1280px) {
-  .favouriteCities {
-    font-size: 14px;
+  .currentDay {
+    margin-top: 92px;
   }
 }
 
-.favouriteCities__name::after {
-  position: absolute;
-  content: '';
-  width: 10px;
-  height: 10px;
-  background-image: url("/images/icons/close.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: 10px;
-  right: 10px;
-}
-
-.quote {
-  text-align: right;
-  align-items: flex-end;
-}
-
-.quote__example {
-  font-style: italic;
-  font-size: 14px;
+.currentDay__wrapper {
+  width: 280px;
+  height: 190px;
+  background-color: #102136;
+  border-radius: 34px;
 }
 
 @media (min-width: 768px) {
-  .quote__example {
-    font-size: 22px;
+  .currentDay__wrapper {
+    width: 500px;
+    height: 300px;
   }
 }
 
-.quote__author-name {
+@media (min-width: 1280px) {
+  .currentDay__wrapper {
+    width: 450px;
+    height: 300px;
+    border-radius: 34px 0px 0px 34px;
+    margin-right: 0;
+  }
+}
+
+.currentDay__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.currentDay__icon {
+  margin-top: 35px;
+}
+
+.currentDay__cityname {
+  margin-top: 10px;
+  color: #767d85;
   font-size: 18px;
   line-height: 22px;
 }
 
 @media (min-width: 768px) {
-  .quote {
-    width: 379px;
+  .currentDay__cityname {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.currentDay__values {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .currentDay__values {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.currentDay__values__container {
+  display: flex;
+}
+
+.currentDay__temperature {
+  font-size: 45px;
+  line-height: 54px;
+  margin-right: 60px;
+}
+
+@media (min-width: 768px) {
+  .currentDay__temperature {
+    text-align: center;
+    font-size: 90px;
+    line-height: 108px;
+    margin-right: 0;
+  }
+}
+
+.currentDay__temperature__text {
+  color: #767d85;
+}
+
+.currentDay__temperature__min {
+  margin-right: 20px;
+}
+
+.currentDay__temperature__min, .currentDay__temperature__max {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@media (min-width: 768px) {
+  .currentDay__temperature__min, .currentDay__temperature__max {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.daysButtons {
+  margin-top: 31px;
+}
+
+@media (min-width: 768px) {
+  .daysButtons {
+    margin-top: 41px;
   }
 }
 
 @media (min-width: 1280px) {
-  .quote {
+  .daysButtons {
+    margin-top: 21px;
+  }
+}
+
+.daysButtons__wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+  .daysButtons__wrapper {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .daysButtons__wrapper {
+    margin-right: 0;
+  }
+}
+
+.daysButtons__today, .daysButtons__5days {
+  width: 126px;
+  height: 27px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.daysButtons--active {
+  background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .daysButtons__today {
+    margin-right: 18px;
+  }
+}
+
+.calendar {
+  margin-top: 30px;
+}
+
+.calendar__wrapper {
+  width: 280px;
+  height: 190px;
+  background-color: rgba(16, 33, 54, 0.8);
+  border-radius: 34px;
+}
+
+@media (min-width: 768px) {
+  .calendar__wrapper {
+    width: 500px;
+    height: 278px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__wrapper {
     position: absolute;
-    right: 110px;
+    bottom: 0px;
+    border-radius: 0px 34px 0px 0px;
+  }
+}
+
+.calendar__current-day {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 45px;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .calendar__current-day {
+    font-size: 90px;
+  }
+}
+
+.calendar__valueContainer {
+  margin-top: 13px;
+}
+
+@media (min-width: 1280px) {
+  .calendar__valueContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.calendar__time, .calendar__sunTime {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media (min-width: 768px) {
+  .calendar__time, .calendar__sunTime {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.calendar__time {
+  position: relative;
+}
+
+@media (min-width: 1280px) {
+  .calendar__time {
+    margin-right: 45px;
+  }
+}
+
+.calendar__time__month {
+  margin-right: 20px;
+}
+
+.calendar__time__hour::before {
+  position: absolute;
+  left: 140px;
+  content: '';
+  height: 22px;
+  width: 2px;
+  background-image: url(/images/icons/line.svg);
+}
+
+@media (min-width: 768px) {
+  .calendar__time__hour::before {
+    left: 250px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__time__hour::before {
+    left: 90px;
+  }
+}
+
+.calendar__sunTime {
+  position: relative;
+  margin-top: 25px;
+}
+
+@media (min-width: 1280px) {
+  .calendar__sunTime {
+    margin-top: 0;
+  }
+}
+
+.calendar__sunTime__icon--sunrise, .calendar__sunTime__icon--sunset {
+  width: auto;
+  margin-right: 10px;
+}
+
+.calendar__sunTime__sunrise {
+  margin-right: 20px;
+}
+
+.calendar__sunTime__sunset::before {
+  position: absolute;
+  left: 140px;
+  content: '';
+  height: 22px;
+  width: 2px;
+  background-image: url(/images/icons/line.svg);
+}
+
+@media (min-width: 768px) {
+  .calendar__sunTime__sunset::before {
+    left: 250px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .calendar__sunTime__sunset::before {
+    left: 90px;
+  }
+}
+
+.quote {
+  margin-top: 44px;
+  text-align: right;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .quote {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 768px) {
+  .quote__wrapper {
+    width: 380px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .quote__wrapper {
+    margin: 95px 110px 172px auto;
+  }
+}
+
+.quote__authorName {
+  margin-top: 15px;
+  font-style: normal;
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .quote__authorName {
+    width: 380px;
   }
 }
 
@@ -412,6 +649,7 @@ body {
 .daysList__item_value {
   display: flex;
   font-size: 14px;
+  color: #FF6B09;
 }
 
 @media screen and (min-width: 768px) {
@@ -440,5 +678,17 @@ body {
 
 .separator {
   margin: 0 10px;
+}
+
+.btn-schow-chart {
+  text-align: center;
+}
+
+.schow-chart {
+  font-size: 18px;
+  color: #FF6B09;
+  text-align: center;
+  text-decoration: underline;
+  background-color: rgba(16, 33, 54, 0.8);
 }
 /*# sourceMappingURL=main.css.map */
