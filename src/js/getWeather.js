@@ -22,11 +22,13 @@ function getWeatherByCity(city) {
       if (!response.ok) {
         throw new Error(response.status);
       }
+      
       return response.json();
   }).then(markUpWeather);
 };
 
 function markUpWeather({ main, weather, name }) {
+      
       refs.temperature.textContent = Math.round(main.temp);
       refs.locationTimezone.textContent = name;
       refs.maxTemperature.textContent =  Math.round(main.temp_max) + degree;
@@ -40,9 +42,12 @@ function getWeather(long, lat) {
       if (!response.ok) {
         throw new Error(response.status);
       }
+      
       return response.json();
     })
     .then(markUpWeather);
+
+    
 };
 
 
@@ -91,13 +96,14 @@ function getWeatherFiveDays(city) {
       
       return response.json();
   }).then(response => {
-     console.log(response);
+    // console.log(response);
     // console.log(response.list[0].main.temp);
     // console.log(response.list[1].main.humidity);
     // console.log(response.list[2].main.pressure);
     // console.log(response.list[3].wind.speed);
     
-   
+    const dataDays = response.list.map((element) => days.push(element.list));
+
     const chartDataTemp = response.list.map((element) =>  temperature.push(element.main.temp) );
     const chartDataHum = response.list.map((element) => humidity.push(element.main.humidity));
     const chartDataPress = response.list.map((element) =>  pressure.push(element.main.pressure) );
@@ -122,17 +128,18 @@ dateFiveDays.textContent = date
 let iconFiveDays = document.createElement('img');
 iconFiveDays.className = 'icon-five-days';
 
-let tempFiveDays = document.createElement('div');
+let tempFiveDays = document.createElement('li');
 tempFiveDays.className = 'temp-five-days';
 tempFiveDays.textContent = `${temperature[i]} °C`;
 
-let minTempFiveDays = document.createElement('li');
-tempFiveDays.className = 'min-temp-five-days';
-tempFiveDays.textContent = `${minTemp[i]} °C`;
+let minTemperature = document.createElement('li');
+minTemperature.className = 'min-temp-five-days';
+minTemperature.textContent = `${minTemp[i]} °C`;
 
-let maxTempFiveDays = document.createElement('div');
-tempFiveDays.className = 'max-temp-five-days';
-tempFiveDays.textContent = `${maxTemp[i]} °C`;
+let maxTemperature = document.createElement('li');
+maxTemperature.className = 'max-temp-five-days';
+maxTemperature.textContent = `${maxTemp[i]} °C`;
+
 
 let humFiveDays = document.createElement('li');
 humFiveDays.className = 'hum-five-days';
@@ -144,14 +151,15 @@ humFiveDays.textContent = `${humidity[i]} %`;
       let listItem = document.createElement('ul');
       listItem.appendChild(dateFiveDays);
       listItem.appendChild(tempFiveDays);
-      listItem.appendChild(minTempFiveDays);
-      listItem.appendChild(maxTempFiveDays);
+      listItem.appendChild(minTemperature);
+      listItem.appendChild(maxTemperature);
       listItem.appendChild(iconFiveDays);
       listItem.appendChild(humFiveDays);
       listItem.appendChild(moreInfoBtn);
       
+      
      
-      i+=8; 
+      i+=7; 
     console.log(i);
       fiveDaysList.appendChild(listItem);
       
@@ -161,14 +169,22 @@ humFiveDays.textContent = `${humidity[i]} %`;
 //getWeatherFiveDays();
 
 const temperature = [];
-console.log(temperature);
+//console.log(temperature);
 const humidity = [];
 const pressure = [];
 const speed = [];
 const minTemp = [];
-console.log(minTemp);
+//console.log(minTemp);
 const maxTemp = [];
-console.log(maxTemp);
+//console.log(maxTemp);
+
+const days = [];
+console.log(days);
+const dayOne = [];
+const dayTwo = [];
+const dayThree = [];
+const dayFour = [];
+const dayFive = [];
 
 
 // function renderFiveDaysList(elements) {
@@ -198,12 +214,12 @@ const newdate = date.toLocaleString('en-us',{day: 'numeric', month:'short', year
 dates.push(newdate);
 date.setDate(date.getDate() + 1);
 let dateInSeconds =(date.getTime()/1000).toFixed(0);
-console.log(dateInSeconds);
+//console.log(dateInSeconds);
 datesInSeconds.push(dateInSeconds);
 
 }
-console.log(dates);
-console.log(datesInSeconds);
+//console.log(dates);
+//console.log(datesInSeconds);
 
 // ========================================================================
 // Chart

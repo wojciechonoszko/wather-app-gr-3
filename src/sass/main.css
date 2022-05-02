@@ -1122,8 +1122,9 @@ opacity: 0.3;
     content: url('../images/sunny.png');
     
   }
-.temp-min-five-days,
-.temp-max-five-days,
+
+.min-temp-five-days,
+.max-temp-five-days,
 .temp-five-days {
 font-family: 'Lato';
 font-style: normal;
