@@ -102,7 +102,21 @@ function getWeatherFiveDays(city) {
     // console.log(response.list[2].main.pressure);
     // console.log(response.list[3].wind.speed);
     
-    const dataDays = response.list.map((element) => days.push(element.list));
+    const dataDays = response.list.map((element) => days.push(element));
+
+    for(let day of days){
+      //console.log(day.dt);
+      const date = new Date();
+      console.log(parseInt(datesInSeconds[0]));
+      if ((day.dt > (parseInt(datesInSeconds[0]))) && (day.dt < (parseInt(datesInSeconds[1])))) {
+        console.log(day.dt);
+        dayOne.push(day)}
+      else if ((day.dt > (parseInt(datesInSeconds[1]))) && (day.dt < (parseInt(datesInSeconds[2])))) {
+        
+        dayTwo.push(day)}
+        
+      
+    }
 
     const chartDataTemp = response.list.map((element) =>  temperature.push(element.main.temp) );
     const chartDataHum = response.list.map((element) => humidity.push(element.main.humidity));
@@ -181,7 +195,9 @@ const maxTemp = [];
 const days = [];
 console.log(days);
 const dayOne = [];
+console.log(dayOne);
 const dayTwo = [];
+console.log(dayTwo);
 const dayThree = [];
 const dayFour = [];
 const dayFive = [];
@@ -202,8 +218,12 @@ const dayFive = [];
 
 
 const date = new Date();
+date.setHours(1);
+
 const dates = [];
 const datesInSeconds = [];
+
+date.setDate(date.getDate() + 1);
 for(let i=0; i <= 4; i++){
 
 // const month = date.getUTCMonth() + 1; //months from 1-12
@@ -212,14 +232,22 @@ for(let i=0; i <= 4; i++){
 const newdate = date.toLocaleString('en-us',{day: 'numeric', month:'short', year:'numeric'});
 //const newdate = year + "/" + month + "/" + day;
 dates.push(newdate);
-date.setDate(date.getDate() + 1);
+
 let dateInSeconds =(date.getTime()/1000).toFixed(0);
 //console.log(dateInSeconds);
 datesInSeconds.push(dateInSeconds);
+date.setDate(date.getDate() + 1);
 
 }
-//console.log(dates);
+console.log(dates);
 //console.log(datesInSeconds);
+
+let intDates = [...datesInSeconds];
+intDates = intDates.map(Number);
+console.log(intDates);
+
+
+
 
 // ========================================================================
 // Chart
