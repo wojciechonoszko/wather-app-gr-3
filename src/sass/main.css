@@ -1122,9 +1122,10 @@ opacity: 0.3;
     content: url('../images/sunny.png');
     
   }
-
-  .temp-five-days {
-    font-family: 'Lato';
+.temp-min-five-days,
+.temp-max-five-days,
+.temp-five-days {
+font-family: 'Lato';
 font-style: normal;
 font-weight: 700;
 font-size: 25px;
@@ -1137,4 +1138,4 @@ align-items: center;
 text-align: center;
 
 color: #FF6B09;
-  }
+}

@@ -52,6 +52,7 @@ function getWeather(long, lat) {
 // npm install chart.js --save - chart.js library installation
 
 import Chart from 'chart.js/auto';
+import '../sass/main.css';
 
 //import { getRelativePosition } from 'chart.js/helpers';
 
@@ -101,9 +102,11 @@ function getWeatherFiveDays(city) {
     const chartDataHum = response.list.map((element) => humidity.push(element.main.humidity));
     const chartDataPress = response.list.map((element) =>  pressure.push(element.main.pressure) );
     const chartDataWind = response.list.map((element) => speed.push(element.wind.speed));
+    const chartDataMinTemp = response.list.map((element) => minTemp.push(element.main.temp_min));
+    const chartDataMaxTemp = response.list.map((element) => maxTemp.push(element.main.temp_max));
 
    
-  }).then(data=> {
+  }).then(data => {
     let i = 0;
     
     for (const date of dates){
@@ -119,21 +122,34 @@ dateFiveDays.textContent = date
 let iconFiveDays = document.createElement('img');
 iconFiveDays.className = 'icon-five-days';
 
-let tempFiveDays = document.createElement('li');
+let tempFiveDays = document.createElement('div');
 tempFiveDays.className = 'temp-five-days';
-tempFiveDays.textContent = `${temperature[i]} °C`
+tempFiveDays.textContent = `${temperature[i]} °C`;
+
+let minTempFiveDays = document.createElement('li');
+tempFiveDays.className = 'min-temp-five-days';
+tempFiveDays.textContent = `${minTemp[i]} °C`;
+
+let maxTempFiveDays = document.createElement('div');
+tempFiveDays.className = 'max-temp-five-days';
+tempFiveDays.textContent = `${maxTemp[i]} °C`;
 
 let humFiveDays = document.createElement('li');
 humFiveDays.className = 'hum-five-days';
-humFiveDays.textContent = `${humidity[i]} %`
+humFiveDays.textContent = `${humidity[i]} %`;
+
+
 
 
       let listItem = document.createElement('ul');
       listItem.appendChild(dateFiveDays);
-      listItem.appendChild(tempFiveDays)
+      listItem.appendChild(tempFiveDays);
+      listItem.appendChild(minTempFiveDays);
+      listItem.appendChild(maxTempFiveDays);
       listItem.appendChild(iconFiveDays);
-      listItem.appendChild(humFiveDays)
-      listItem.appendChild(moreInfoBtn)
+      listItem.appendChild(humFiveDays);
+      listItem.appendChild(moreInfoBtn);
+      
      
       i+=8; 
     console.log(i);
@@ -149,19 +165,24 @@ console.log(temperature);
 const humidity = [];
 const pressure = [];
 const speed = [];
+const minTemp = [];
+console.log(minTemp);
+const maxTemp = [];
+console.log(maxTemp);
 
-function renderFiveDaysList(elements) {
-  const markup = elements
-    .map((element) => {
-      return `<li>
-          <p><b>Name</b>: ${element.main.temp}</p>
-          <p><b>Email</b>: ${element.main.humidity}</p>
-          <p><b>Company</b>: ${element.main.pressure}</p>
-        </li>`;
-    })
-    .join("");
-  fiveDaysList.innerHTML = markup;
-}
+
+// function renderFiveDaysList(elements) {
+//   const markup = elements
+//     .map((element) => {
+//       return `<li>
+//           <p><b>Name</b>: ${element.main.temp}</p>
+//           <p><b>Email</b>: ${element.main.humidity}</p>
+//           <p><b>Company</b>: ${element.main.pressure}</p>
+//         </li>`;
+//     })
+//     .join("");
+//   fiveDaysList.innerHTML = markup;
+// }
 
 
 const date = new Date();
