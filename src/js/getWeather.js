@@ -104,19 +104,28 @@ function getWeatherFiveDays(city) {
     
     const dataDays = response.list.map((element) => days.push(element));
 
+    let tempMaxOne = 0;
+    let tempMaxTwo = 0;
+
     for(let day of days){
       //console.log(day.dt);
       const date = new Date();
-      console.log(parseInt(datesInSeconds[0]));
+      //console.log(parseInt(datesInSeconds[0]));
       if ((day.dt > (parseInt(datesInSeconds[0]))) && (day.dt < (parseInt(datesInSeconds[1])))) {
-        console.log(day.dt);
-        dayOne.push(day)}
+        //console.log(day.dt);
+        tempMaxOne += day.main.temp_max;
+        dayOne.push(day)
+      }
       else if ((day.dt > (parseInt(datesInSeconds[1]))) && (day.dt < (parseInt(datesInSeconds[2])))) {
-        
+        tempMaxTwo += day.main.temp_max;
         dayTwo.push(day)}
         
       
     }
+    const avgTempMaxOne = (tempMaxOne / dayOne.length).toFixed(1);
+    avgTempMax.push(avgTempMaxOne);
+    const avgTempMaxTwo = (tempMaxTwo / dayOne.length).toFixed(1);
+    avgTempMax.push(avgTempMaxTwo);
 
     const chartDataTemp = response.list.map((element) =>  temperature.push(element.main.temp) );
     const chartDataHum = response.list.map((element) => humidity.push(element.main.humidity));
@@ -174,14 +183,15 @@ humFiveDays.textContent = `${humidity[i]} %`;
       
      
       i+=7; 
-    console.log(i);
+    //console.log(i);
       fiveDaysList.appendChild(listItem);
       
     }
-  })
+  }).then(iterArray)
 };
 //getWeatherFiveDays();
-
+const avgTempMax = [];
+console.log(avgTempMax);
 const temperature = [];
 //console.log(temperature);
 const humidity = [];
@@ -194,13 +204,50 @@ const maxTemp = [];
 
 const days = [];
 console.log(days);
+
+const dayOneTempsMax = [];
 const dayOne = [];
 console.log(dayOne);
+
+for (let object in dayOne) {
+  
+  console.log(object);
+  console.log(object.dt);
+  console.log(object.pop);
+};
+
 const dayTwo = [];
 console.log(dayTwo);
 const dayThree = [];
 const dayFour = [];
 const dayFive = [];
+
+function iterArray(){
+  for(const key in dayOne) {
+    if (dayOne.hasOwnProperty(key)){
+      console.log(dayOne[key]);
+    }
+  }
+
+  for (let object of dayOne) {
+  
+    console.log(object);
+    console.log(object.dt);
+    console.log(object.pop);
+  };
+  let dd = 0;
+  for (let dayOneTempMax of dayOne) {
+  dayOneTempsMax.push(dayOneTempMax.main.temp_max)
+  dd += dayOneTempMax.main.temp_max;
+};
+
+
+console.log((dd/ dayOne.length).toFixed(1));
+console.log(dayOneTempsMax);
+  console.log("HELLO")
+}
+
+
 
 
 // function renderFiveDaysList(elements) {
@@ -470,5 +517,6 @@ refs.searchForm.addEventListener('submit', evt => {
   setBackground(userInput);
   getWeatherByCity(userInput);
   getWeatherFiveDays(userInput);
+  iterArray();
   console.log(userInput);
 });
