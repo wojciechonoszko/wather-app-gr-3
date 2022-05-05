@@ -219,6 +219,12 @@ const maxTemp = [];
 
 const days = [];
 console.log(days);
+const dayOneTemps = [];
+const dayTwoTemps = [];
+const dayThreeTemps = [];
+const dayFourTemps = [];
+const dayFiveTemps = [];
+
 
 const dayOneTempsMax = [];
 const dayTwoTempsMax = [];
