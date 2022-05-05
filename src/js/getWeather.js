@@ -65,10 +65,12 @@ import '../sass/main.css';
 
 const fiveDaysBtn = document.querySelector('.show-five-days-btn');
 const fiveDaysList = document.querySelector('.five-days-list');
+const fiveDaysHidden = document.querySelector('.five-days-hidden');
 const chartShowBtn = document.querySelector('.chart-show-link');
 const chartShowBtnCtn = document.querySelector('.chart-show-button-container');
 const chartCloseBtn = document.querySelector('.chart-hide-link');
 const chartContainer = document.querySelector('.chart-cnt');
+
 
 
 
@@ -78,8 +80,11 @@ function chartDisplay() {
   chartContainer.classList.toggle('is-closed');
   
 }
+function fiveDaysDisplay() {
+  fiveDaysHidden.classList.toggle('is-closed');
+}
 
-fiveDaysBtn.addEventListener("click", getWeatherFiveDays)
+fiveDaysBtn.addEventListener("click", fiveDaysDisplay);
    
 
  chartShowBtn.addEventListener('click', chartDisplay);
@@ -118,14 +123,25 @@ function getWeatherFiveDays(city) {
       }
       else if ((day.dt > (parseInt(datesInSeconds[1]))) && (day.dt < (parseInt(datesInSeconds[2])))) {
         tempMaxTwo += day.main.temp_max;
-        dayTwo.push(day)}
+        dayTwo.push(day)
+      }
+      else if ((day.dt > intDates[2]) && (day.dt < intDates[3])) {
+        dayThree.push(day);
+      }
+      else if ((day.dt > intDates[3]) && (day.dt < intDates[4])) {
+        dayFour.push(day);
+      }
+      else {
+        dayFive.push(day)
+      }
+      
         
       
     }
-    const avgTempMaxOne = (tempMaxOne / dayOne.length).toFixed(1);
-    avgTempMax.push(avgTempMaxOne);
-    const avgTempMaxTwo = (tempMaxTwo / dayOne.length).toFixed(1);
-    avgTempMax.push(avgTempMaxTwo);
+    // const avgTempMaxOne = (tempMaxOne / dayOne.length).toFixed(1);
+    // avgTempMax.push(avgTempMaxOne);
+    // const avgTempMaxTwo = (tempMaxTwo / dayOne.length).toFixed(1);
+    // avgTempMax.push(avgTempMaxTwo);
 
     const chartDataTemp = response.list.map((element) =>  temperature.push(element.main.temp) );
     const chartDataHum = response.list.map((element) => humidity.push(element.main.humidity));
@@ -190,8 +206,7 @@ humFiveDays.textContent = `${humidity[i]} %`;
   }).then(iterArray)
 };
 //getWeatherFiveDays();
-const avgTempMax = [];
-console.log(avgTempMax);
+
 const temperature = [];
 //console.log(temperature);
 const humidity = [];
@@ -206,15 +221,21 @@ const days = [];
 console.log(days);
 
 const dayOneTempsMax = [];
+const dayTwoTempsMax = [];
+const dayThreeTempsMax = [];
+const dayFourTempsMax = [];
+const dayFiveTempsMax = [];
+
+const dayOneTempsMin = [];
+const dayTwoTempsMin = [];
+const dayThreeTempsMin = [];
+const dayFourTempsMin = [];
+const dayFiveTempsMin = [];
+
 const dayOne = [];
 console.log(dayOne);
 
-for (let object in dayOne) {
-  
-  console.log(object);
-  console.log(object.dt);
-  console.log(object.pop);
-};
+
 
 const dayTwo = [];
 console.log(dayTwo);
@@ -222,30 +243,92 @@ const dayThree = [];
 const dayFour = [];
 const dayFive = [];
 
+
+
 function iterArray(){
-  for(const key in dayOne) {
-    if (dayOne.hasOwnProperty(key)){
-      console.log(dayOne[key]);
-    }
+  averageValuesTempMax(dayOne, dayOneTempsMax, avgTempsMax);
+  averageValuesTempMax(dayTwo, dayTwoTempsMax, avgTempsMax);
+  averageValuesTempMax(dayThree, dayThreeTempsMax, avgTempsMax);
+  averageValuesTempMax(dayFour, dayFourTempsMax, avgTempsMax);
+  averageValuesTempMax(dayFive, dayFiveTempsMax, avgTempsMax);
+
+  averageValuesTempMin(dayOne, dayOneTempsMin, avgTempsMin);
+  averageValuesTempMin(dayTwo, dayTwoTempsMin, avgTempsMin);
+  averageValuesTempMin(dayThree, dayThreeTempsMin, avgTempsMin);
+  averageValuesTempMin(dayFour, dayFourTempsMin, avgTempsMin);
+  averageValuesTempMin(dayFive, dayFiveTempsMin, avgTempsMin);
+
   }
 
-  for (let object of dayOne) {
-  
-    console.log(object);
-    console.log(object.dt);
-    console.log(object.pop);
+function averageValuesTempMax(objectArray, pushingArrayOne, pushingArrayTwo) {
+  const lodash = require('lodash');
+  for (let object of objectArray) {
+    pushingArrayOne.push(object.main.temp_max); 
   };
-  let dd = 0;
-  for (let dayOneTempMax of dayOne) {
-  dayOneTempsMax.push(dayOneTempMax.main.temp_max)
-  dd += dayOneTempMax.main.temp_max;
-};
-
-
-console.log((dd/ dayOne.length).toFixed(1));
-console.log(dayOneTempsMax);
-  console.log("HELLO")
+  //console.log(pushingArrayOne);
+  let avgTempMax = 0;
+  let sumElem = 0;
+  //sumElem = lodash.sum(pushingArrayOne);
+  for(let elem of pushingArrayOne){
+    sumElem += elem;
+  }
+  //avgTempMax = sumElem / objectArray.length;
+  avgTempMax = (sumElem / objectArray.length).toFixed(1);
+  //avgTempMax = Math.round(sumElem / pushingArrayOne.length);
+  
+  //console.log(avgTempMax);
+  pushingArrayTwo.push(Number(avgTempMax));
+  pushingArrayTwo.sort(); 
 }
+const lodash = require('lodash');
+function averageValuesTempMin(objectArray, pushingArrayOne, pushingArrayTwo) {
+  
+  for (let object of objectArray) {
+    pushingArrayOne.push(object.main.temp_min); 
+  };
+  let avgTempMax = 0;
+  let sumElem = 0;
+  sumElem = lodash.sum(pushingArrayOne);
+  
+  avgTempMax = (sumElem / objectArray.length).toFixed(1);
+  //avgTempMax = Math.round(sumElem / pushingArrayOne.length);
+  
+  //console.log(avgTempsMin);
+  pushingArrayTwo.push(Number(avgTempMax));
+  pushingArrayTwo.sort(); 
+}
+
+const avgTempsMax = [];
+console.log(avgTempsMax);
+const avgTempsMin = [];
+console.log(avgTempsMin);
+
+
+
+
+// for (let object of dayOne) {
+  
+//     // console.log(object);
+//     // console.log(object.dt);
+//     // console.log(object.pop);
+// };
+//   const lodash = require('lodash'); 
+//   for (let object of dayOne) {
+//   dayOneTempsMax.push(object.main.temp_max)
+   
+// };
+// let avgDayOneTempMax = ((lodash.sum(dayOneTempsMax))/ dayTwo.length).toFixed(1)
+
+// console.log(avgDayOneTempMax);
+// //console.log(dayOneTempsMax);
+
+// for (let object of dayTwo) {
+//   dayTwoTempsMax.push(object.main.temp_max);
+// }
+
+// let avgDayTwoTempMax = ((lodash.sum(dayTwoTempsMax))/ dayTwo.length).toFixed(1)
+// console.log(avgDayTwoTempMax);  
+
 
 
 
