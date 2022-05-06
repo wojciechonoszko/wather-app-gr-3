@@ -149,9 +149,11 @@ function getWeatherFiveDays(city) {
     const chartDataWind = response.list.map((element) => speed.push(element.wind.speed));
     const chartDataMinTemp = response.list.map((element) => minTemp.push(element.main.temp_min));
     const chartDataMaxTemp = response.list.map((element) => maxTemp.push(element.main.temp_max));
+    const classIcon = response.list.map((element) => classIconAll.push(element.weather));
 
    
-  }).then(data => {
+  }).then(iterArray)
+  .then(data => {
     let i = 0;
     
     for (const date of dates){
@@ -169,15 +171,15 @@ iconFiveDays.className = 'icon-five-days';
 
 let tempFiveDays = document.createElement('li');
 tempFiveDays.className = 'temp-five-days';
-tempFiveDays.textContent = `${temperature[i]} °C`;
+tempFiveDays.textContent = `${avgTemps[i]} °C`;
 
 let minTemperature = document.createElement('li');
 minTemperature.className = 'min-temp-five-days';
-minTemperature.textContent = `${minTemp[i]} °C`;
+minTemperature.textContent = `${avgTempsMin[i]} °C`;
 
 let maxTemperature = document.createElement('li');
 maxTemperature.className = 'max-temp-five-days';
-maxTemperature.textContent = `${maxTemp[i]} °C`;
+maxTemperature.textContent = `${avgTempsMax[i]} °C`;
 
 
 let humFiveDays = document.createElement('li');
@@ -198,14 +200,14 @@ humFiveDays.textContent = `${humidity[i]} %`;
       
       
      
-      i+=7; 
+      i+=1; 
     //console.log(i);
       fiveDaysList.appendChild(listItem);
       
     }
-  }).then(iterArray)
+  })
 };
-//getWeatherFiveDays();
+
 
 const temperature = [];
 //console.log(temperature);
@@ -238,6 +240,10 @@ const dayThreeTempsMin = [];
 const dayFourTempsMin = [];
 const dayFiveTempsMin = [];
 
+const classIconAll=[];
+console.log(classIconAll);
+const classIcon = [];
+console.log(classIcon);
 const dayOne = [];
 console.log(dayOne);
 
@@ -252,6 +258,12 @@ const dayFive = [];
 
 
 function iterArray(){
+  averageValuesTemp(dayOne, dayOneTemps, avgTemps);
+  averageValuesTemp(dayTwo, dayTwoTemps, avgTemps);
+  averageValuesTemp(dayThree, dayThreeTemps, avgTemps);
+  averageValuesTemp(dayFour, dayFourTemps, avgTemps);
+  averageValuesTemp(dayFive, dayFiveTemps, avgTemps);
+
   averageValuesTempMax(dayOne, dayOneTempsMax, avgTempsMax);
   averageValuesTempMax(dayTwo, dayTwoTempsMax, avgTempsMax);
   averageValuesTempMax(dayThree, dayThreeTempsMax, avgTempsMax);
@@ -264,8 +276,24 @@ function iterArray(){
   averageValuesTempMin(dayFour, dayFourTempsMin, avgTempsMin);
   averageValuesTempMin(dayFive, dayFiveTempsMin, avgTempsMin);
 
+  cloudsChoice(classIconAll, classIcon);
+
   }
 
+function cloudsChoice(objectArray, pushingArrayOne, pushingArrayTwo){
+  let describe;
+  console.log(objectArray);
+  for (let object of objectArray){
+    for (let obj of object){
+      console.log(obj);
+    console.log(obj.main);
+    console.log(obj.id);
+    pushingArrayOne.push(obj.main)
+    }
+    
+  }
+
+};
 function averageValuesTempMax(objectArray, pushingArrayOne, pushingArrayTwo) {
   const lodash = require('lodash');
   for (let object of objectArray) {
@@ -284,30 +312,55 @@ function averageValuesTempMax(objectArray, pushingArrayOne, pushingArrayTwo) {
   
   //console.log(avgTempMax);
   pushingArrayTwo.push(Number(avgTempMax));
-  pushingArrayTwo.sort(); 
+  
 }
+
 const lodash = require('lodash');
+
 function averageValuesTempMin(objectArray, pushingArrayOne, pushingArrayTwo) {
   
   for (let object of objectArray) {
     pushingArrayOne.push(object.main.temp_min); 
   };
-  let avgTempMax = 0;
-  let sumElem = 0;
+  let avgTempMin;
+  let sumElem;
   sumElem = lodash.sum(pushingArrayOne);
-  
-  avgTempMax = (sumElem / objectArray.length).toFixed(1);
+  //console.log(sumElem);
+  avgTempMin = (sumElem / objectArray.length).toFixed(1);
   //avgTempMax = Math.round(sumElem / pushingArrayOne.length);
   
-  //console.log(avgTempsMin);
-  pushingArrayTwo.push(Number(avgTempMax));
-  pushingArrayTwo.sort(); 
+  //console.log(typeof(avgTempMin));
+  
+  pushingArrayTwo.push(avgTempMin);
+  
+  
+}
+
+function averageValuesTemp(objectArray, pushingArrayOne, pushingArrayTwo) {
+  
+  for (let object of objectArray) {
+    pushingArrayOne.push(object.main.temp); 
+  };
+  let avg;
+  let sumElem;
+  sumElem = lodash.sum(pushingArrayOne);
+  //console.log(sumElem);
+  avg = (sumElem / objectArray.length).toFixed(1);
+  //avgTempMax = Math.round(sumElem / pushingArrayOne.length);
+  
+  //console.log(typeof(avgTempMin));
+  
+  pushingArrayTwo.push(avg);
+  
+   
 }
 
 const avgTempsMax = [];
-console.log(avgTempsMax);
+//console.log(avgTempsMax);
 const avgTempsMin = [];
-console.log(avgTempsMin);
+//console.log(avgTempsMin);
+const avgTemps = [];
+console.log(avgTemps);
 
 
 
@@ -606,6 +659,6 @@ refs.searchForm.addEventListener('submit', evt => {
   setBackground(userInput);
   getWeatherByCity(userInput);
   getWeatherFiveDays(userInput);
-  iterArray();
+  
   console.log(userInput);
 });
