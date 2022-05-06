@@ -66,6 +66,7 @@ import '../sass/main.css';
 const fiveDaysBtn = document.querySelector('.show-five-days-btn');
 const fiveDaysList = document.querySelector('.five-days-list');
 const fiveDaysHidden = document.querySelector('.five-days-hidden');
+const moreInfoList = document.querySelector('.more-info-hidden');
 const chartShowBtn = document.querySelector('.chart-show-link');
 const chartShowBtnCtn = document.querySelector('.chart-show-button-container');
 const chartCloseBtn = document.querySelector('.chart-hide-link');
@@ -169,17 +170,20 @@ dateFiveDays.textContent = date
 let iconFiveDays = document.createElement('img');
 iconFiveDays.className = 'icon-five-days';
 
+let iconDayOne = document.createElement('img');
+iconDayOne.className = `icon-${classIcon[(i+1)*7]}`;
+
 let tempFiveDays = document.createElement('li');
 tempFiveDays.className = 'temp-five-days';
 tempFiveDays.textContent = `${avgTemps[i]} °C`;
 
 let minTemperature = document.createElement('li');
 minTemperature.className = 'min-temp-five-days';
-minTemperature.textContent = `${avgTempsMin[i]} °C`;
+minTemperature.textContent = `min ${avgTempsMin[i]} °C`;
 
 let maxTemperature = document.createElement('li');
 maxTemperature.className = 'max-temp-five-days';
-maxTemperature.textContent = `${avgTempsMax[i]} °C`;
+maxTemperature.textContent = `max ${avgTempsMax[i]} °C`;
 
 
 let humFiveDays = document.createElement('li');
@@ -191,10 +195,11 @@ humFiveDays.textContent = `${humidity[i]} %`;
 
       let listItem = document.createElement('ul');
       listItem.appendChild(dateFiveDays);
-      listItem.appendChild(tempFiveDays);
-      listItem.appendChild(minTemperature);
+      //listItem.appendChild(tempFiveDays);
+      listItem.appendChild(minTemperature ,maxTemperature);
       listItem.appendChild(maxTemperature);
-      listItem.appendChild(iconFiveDays);
+      //listItem.appendChild(iconFiveDays);
+      listItem.appendChild(iconDayOne);
       listItem.appendChild(humFiveDays);
       listItem.appendChild(moreInfoBtn);
       
@@ -205,9 +210,36 @@ humFiveDays.textContent = `${humidity[i]} %`;
       fiveDaysList.appendChild(listItem);
       
     }
-  })
+    const moreInfoBtn = document.querySelector('.more-info');
+    moreInfoBtn.addEventListener('click', moreInfoDisplay);
+  }).then(moreInfo)
 };
 
+function moreInfoDisplay() {
+  moreInfoList.classList.toggle('is-closed');
+}
+
+
+function moreInfo(){
+  let i=0;
+  for (const elem of dayOneTemps){
+  //console.log(dayOneTemps);
+  let hour = document.createElement('li');
+  hour.className = 'hour';
+  hour.textContent = `${hours[i]}`;
+
+  let tempDayOne = document.createElement('li');
+  tempDayOne.className = 'temp-day-one';
+  tempDayOne.textContent = `${dayOneTemps[i]} °C`;
+
+  let listItem = document.createElement('ul');
+      listItem.className =  'more-info-ul';
+      listItem.appendChild(hour);
+      listItem.appendChild(tempDayOne);
+  i+=1;
+  moreInfoList.appendChild(listItem);
+}
+}
 
 const temperature = [];
 //console.log(temperature);
@@ -221,6 +253,10 @@ const maxTemp = [];
 
 const days = [];
 console.log(days);
+
+const hours = [];
+
+
 const dayOneTemps = [];
 const dayTwoTemps = [];
 const dayThreeTemps = [];
@@ -278,22 +314,35 @@ function iterArray(){
 
   cloudsChoice(classIconAll, classIcon);
 
+  generateHours(dayOne, hours)
+
   }
 
 function cloudsChoice(objectArray, pushingArrayOne, pushingArrayTwo){
   let describe;
-  console.log(objectArray);
+  //console.log(objectArray);
   for (let object of objectArray){
     for (let obj of object){
-      console.log(obj);
-    console.log(obj.main);
-    console.log(obj.id);
+      //console.log(obj);
+    //console.log(obj.main);
+    //console.log(obj.id);
     pushingArrayOne.push(obj.main)
     }
     
   }
+  console.log(pushingArrayOne);
 
 };
+
+function generateHours(objectArray, pushingArrayOne){
+  for (let object of objectArray){
+    let cutter;
+    cutter = object.dt_txt.split(' ')
+    //console.log(cutter);
+    pushingArrayOne.push(cutter[1])
+    //console.log(pushingArrayOne);
+  }
+}
 function averageValuesTempMax(objectArray, pushingArrayOne, pushingArrayTwo) {
   const lodash = require('lodash');
   for (let object of objectArray) {

@@ -885,6 +885,7 @@ body {
     background: rgba(16, 33, 54, 0.8);
     box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
     border-radius: 34px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     padding-right: 30px;
@@ -907,7 +908,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    
+    margin-top: 30px;
     
   }
   .chart-show-button-container {
@@ -915,6 +917,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    margin-top: 200px;
   }
   .chart-show-link,
   .chart-hide-link {
@@ -1044,20 +1047,25 @@ border-radius: 20px;
   
   color: #000000;
   }
-
+.five-days {
+  background: rgba(16, 33, 54, 0.8);
+  box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
+  border-radius: 34px;
+  width: 1060px;
+height: 308px;
+margin-left:auto;
+margin-right:auto;
+}
 .five-days-list {
   display: flex;
   position: relative;
-width: 1060px;
-height: 308px;
-left: 110px;
+
+/* left: 110px; */
 
 margin-left:auto;
 margin-right:auto;
 
-background: rgba(16, 33, 54, 0.8);
-box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
-border-radius: 34px;
+
 }
 ul {
   margin-left: auto;
@@ -1112,6 +1120,10 @@ color: #FFFFFF;
 opacity: 0.3;
 }
 
+.icon-Rain,
+.icon-Clouds,
+.icon-Clear,
+.icon-Snow,
 .icon-five-days {
   display:flex;
   justify-content: center;
@@ -1122,6 +1134,23 @@ opacity: 0.3;
     content: url('../images/sunny.png');
     
   }
+.icon-Rain {
+  content: url('../images/rain.png');
+}
+
+.icon-Clouds {
+  content: url('../images/cloud.png');
+}
+
+.icon-Clear {
+  content: url('../images/sunny.png');
+}
+
+.icon-Snow {
+  content: url('../images/sunsnow.png');
+}
+
+
 
 .min-temp-five-days,
 .max-temp-five-days,
@@ -1139,4 +1168,28 @@ align-items: center;
 text-align: center;
 
 color: #FF6B09;
+}
+
+.hour,
+.temp-day-one {
+  
+/* float: left; */
+padding: 20px;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+color: #FFFFFF;
+
+opacity: 0.54;
+  
+}
+.more-info-ul {
+  float: left;
+}
+
+.more-info-list {
+  margin: auto;
+  padding: auto
 }
