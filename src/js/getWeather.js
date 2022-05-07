@@ -66,7 +66,8 @@ import '../sass/main.css';
 const fiveDaysBtn = document.querySelector('.show-five-days-btn');
 const fiveDaysList = document.querySelector('.five-days-list');
 const fiveDaysHidden = document.querySelector('.five-days-hidden');
-const moreInfoList = document.querySelector('.more-info-hidden');
+const moreInfoListHidden = document.querySelector('.more-info-hidden');
+const moreInfoList = document.querySelector('.more-info-list')
 const chartShowBtn = document.querySelector('.chart-show-link');
 const chartShowBtnCtn = document.querySelector('.chart-show-button-container');
 const chartCloseBtn = document.querySelector('.chart-hide-link');
@@ -158,9 +159,9 @@ function getWeatherFiveDays(city) {
     let i = 0;
     
     for (const date of dates){
-      let moreInfoBtn = document.createElement(`BUTTON`);
-moreInfoBtn.className = 'more-info';
-let text = document.createTextNode('more-info');
+let moreInfoBtn = document.createElement(`BUTTON`);
+moreInfoBtn.className = `more-info${i}`;
+let text = document.createTextNode(`more-info`);
 moreInfoBtn.appendChild(text);
 
 let dateFiveDays = document.createElement('ul');
@@ -200,23 +201,26 @@ humFiveDays.textContent = `${humidity[i]} %`;
       listItem.appendChild(maxTemperature);
       //listItem.appendChild(iconFiveDays);
       listItem.appendChild(iconDayOne);
-      listItem.appendChild(humFiveDays);
+      //listItem.appendChild(humFiveDays);
       listItem.appendChild(moreInfoBtn);
       
       
      
-      i+=1; 
+      
     //console.log(i);
       fiveDaysList.appendChild(listItem);
-      
-    }
-    const moreInfoBtn = document.querySelector('.more-info');
+
+    //let moreInfoBtn = document.querySelector(`.more-info${i}`);
     moreInfoBtn.addEventListener('click', moreInfoDisplay);
+    i+=1; 
+    }
+    
   }).then(moreInfo)
 };
 
 function moreInfoDisplay() {
-  moreInfoList.classList.toggle('is-closed');
+  moreInfoListHidden.classList.toggle('is-closed');
+  moreInfoList.classList.toggle('is-closed')
 }
 
 
@@ -228,14 +232,33 @@ function moreInfo(){
   hour.className = 'hour';
   hour.textContent = `${hours[i]}`;
 
+  let iconDayOne = document.createElement('img');
+iconDayOne.className = `icon-${classIcon[i]}`;
+
   let tempDayOne = document.createElement('li');
   tempDayOne.className = 'temp-day-one';
   tempDayOne.textContent = `${dayOneTemps[i]} °C`;
 
+  let pressureDayOne = document.createElement('li');
+  pressureDayOne.className = 'pressure-day-one';
+  pressureDayOne.textContent = `${dayOnePressure[i]} hPa`;
+
+  let humidityDayOne = document.createElement('li');
+  humidityDayOne.className = 'humidity-day-one';
+  humidityDayOne.textContent = `${dayOneHumidity[i]} %`;
+
+  let windDayOne = document.createElement('li');
+  windDayOne.className = 'wind-day-one';
+  windDayOne.textContent = `${dayOneWind[i]} m/s`;
+
   let listItem = document.createElement('ul');
       listItem.className =  'more-info-ul';
       listItem.appendChild(hour);
+      listItem.appendChild(iconDayOne);
       listItem.appendChild(tempDayOne);
+      listItem.appendChild(pressureDayOne);
+      listItem.appendChild(humidityDayOne);
+      listItem.appendChild(windDayOne);
   i+=1;
   moreInfoList.appendChild(listItem);
 }
@@ -257,6 +280,8 @@ console.log(days);
 const hours = [];
 
 
+
+
 const dayOneTemps = [];
 const dayTwoTemps = [];
 const dayThreeTemps = [];
@@ -275,6 +300,24 @@ const dayTwoTempsMin = [];
 const dayThreeTempsMin = [];
 const dayFourTempsMin = [];
 const dayFiveTempsMin = [];
+
+const dayOnePressure = [];
+const dayTwoPressure = [];
+const dayThreePressure = [];
+const dayFourPressure = [];
+const dayFivePressure = [];
+
+const dayOneHumidity = [];
+const dayTwoHumidity = [];
+const dayThreeHumidity = [];
+const dayFourHumidity = [];
+const dayFiveHumidity = [];
+
+const dayOneWind = [];
+const dayTwoWind = [];
+const dayThreeWind = [];
+const dayFourWind = [];
+const dayFiveWind = [];
 
 const classIconAll=[];
 console.log(classIconAll);
@@ -316,8 +359,32 @@ function iterArray(){
 
   generateHours(dayOne, hours)
 
+  pressureInject(dayOne, dayOnePressure)
+
+  humidityInject(dayOne, dayOneHumidity)
+
+  windInject(dayOne, dayOneWind)
+
   }
 
+function windInject(objectArray, pushingArrayOne){
+  for(let object of objectArray){
+    pushingArrayOne.push(object.wind.speed)
+  }
+}
+
+function humidityInject(objectArray, pushingArrayOne){
+  for(let object of objectArray){
+    pushingArrayOne.push(object.main.humidity)
+  }
+}
+
+function pressureInject(objectArray, pushingArrayOne){
+  for(let object of objectArray){
+    pushingArrayOne.push(object.main.pressure)
+  }
+  
+}
 function cloudsChoice(objectArray, pushingArrayOne, pushingArrayTwo){
   let describe;
   //console.log(objectArray);
