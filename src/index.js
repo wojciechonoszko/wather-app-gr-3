@@ -1,4 +1,4 @@
 // import './js/quotes.js';
-import './js/dateTime';
+import './js/dateTime.js';
 import './js/getWeather.js';
 
