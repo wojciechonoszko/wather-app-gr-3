@@ -84,12 +84,20 @@ function chartDisplay() {
   
 }
 function fiveDaysDisplay() {
+  if (oneDayBtn.disabled === false){
+    oneDayBtn.disabled = true
+  }
+  else {
+    oneDayBtn.disabled=false
+  }
+  
   fiveDaysContainer.classList.toggle('is-closed');
   fiveDaysHidden.classList.toggle('is-closed');
   calendarContainer.classList.toggle('is-closed');
   currentDayContainer.classList.toggle('is-closed');
   quoteContainer.classList.toggle('is-closed');
-}
+};
+
 
 fiveDaysBtn.addEventListener("click", fiveDaysDisplay);
 oneDayBtn.addEventListener("click", fiveDaysDisplay);
@@ -166,7 +174,7 @@ function getWeatherFiveDays(city) {
     
     for (const date of dates){
 let moreInfoBtn = document.createElement(`BUTTON`);
-moreInfoBtn.className = `more-info${i}`;
+moreInfoBtn.className = `more-info`;
 let text = document.createTextNode(`more-info`);
 moreInfoBtn.appendChild(text);
 

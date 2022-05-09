@@ -1,5 +1,7 @@
 .calendar {
   margin-top: 30px;
+  padding: 20px;
+  
   &__wrapper {
     width: 280px;
     height: 190px;
@@ -10,7 +12,7 @@
       height: 278px;
     }
     @media (min-width: 1280px) {
-      position: absolute;
+      // position: absolute;
       bottom: 0px;
       border-radius: 0px 34px 0px 0px;
     }
@@ -45,7 +47,7 @@
   }
 
   &__time {
-    position: relative;
+    // position: relative;
     @media (min-width: 1280px) {
       margin-right: 45px;
     }
@@ -54,7 +56,7 @@
     }
     &__hour {
       &::before {
-        position: absolute;
+        // position: absolute;
         left: 140px;
         content: '';
         height: 22px;
@@ -70,7 +72,7 @@
     }
   }
   &__sunTime {
-    position: relative;
+    // position: relative;
     margin-top: 25px;
     @media (min-width: 1280px) {
       margin-top: 0;
@@ -87,7 +89,7 @@
     }
     &__sunset {
       &::before {
-        position: absolute;
+        // position: absolute;
         left: 140px;
         content: '';
         height: 22px;
