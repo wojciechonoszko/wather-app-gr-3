@@ -194,11 +194,11 @@ tempFiveDays.textContent = `${avgTemps[i]} °C`;
 
 let minTemperature = document.createElement('li');
 minTemperature.className = 'min-temp-five-days';
-minTemperature.textContent = `min ${avgTempsMin[i]} °C`;
+minTemperature.textContent = `min ${minTempsValues[i]} °C`;
 
 let maxTemperature = document.createElement('li');
 maxTemperature.className = 'max-temp-five-days';
-maxTemperature.textContent = `max ${avgTempsMax[i]} °C`;
+maxTemperature.textContent = `max ${maxTempsValues[i]} °C`;
 
 
 let humFiveDays = document.createElement('li');
@@ -251,7 +251,7 @@ iconDayOne.className = `icon-${classIcon[i]}`;
 
   let tempDayOne = document.createElement('li');
   tempDayOne.className = 'temp-day-one';
-  tempDayOne.textContent = `${dayOneTemps[i]} °C`;
+  tempDayOne.textContent = `${dayOneTemps[i].toFixed(1)} °C`;
 
   let pressureDayOne = document.createElement('li');
   pressureDayOne.className = 'pressure-day-one';
@@ -356,6 +356,10 @@ function iterArray(){
   averageValuesTemp(dayThree, dayThreeTemps, avgTemps);
   averageValuesTemp(dayFour, dayFourTemps, avgTemps);
   averageValuesTemp(dayFive, dayFiveTemps, avgTemps);
+
+  maximumTempsValues(dayOneTemps, dayTwoTemps, dayThreeTemps, dayFourTemps, dayFiveTemps);
+  minimumTempsValues(dayOneTemps, dayTwoTemps, dayThreeTemps, dayFourTemps, dayFiveTemps);
+  
 
   averageValuesTempMax(dayOne, dayOneTempsMax, avgTempsMax);
   averageValuesTempMax(dayTwo, dayTwoTempsMax, avgTempsMax);
@@ -484,6 +488,26 @@ function averageValuesTemp(objectArray, pushingArrayOne, pushingArrayTwo) {
   
    
 }
+
+function maximumTempsValues(arrayOne, arrayTwo, arrayThree, arrayFour, arrayFive){
+  maxTempsValues.push((Math.max(...arrayOne)).toFixed(1));
+  maxTempsValues.push((Math.max(...arrayTwo)).toFixed(1));
+  maxTempsValues.push((Math.max(...arrayThree)).toFixed(1));
+  maxTempsValues.push((Math.max(...arrayFour)).toFixed(1));
+  maxTempsValues.push((Math.max(...arrayFive)).toFixed(1));
+}
+
+function minimumTempsValues(arrayOne, arrayTwo, arrayThree, arrayFour, arrayFive){
+  minTempsValues.push((Math.min(...arrayOne)).toFixed(1));
+  minTempsValues.push((Math.min(...arrayTwo)).toFixed(1));
+  minTempsValues.push((Math.min(...arrayThree)).toFixed(1));
+  minTempsValues.push((Math.min(...arrayFour)).toFixed(1));
+  minTempsValues.push((Math.min(...arrayFive)).toFixed(1));
+}
+
+const maxTempsValues = [];
+const minTempsValues = [];
+
 
 const avgTempsMax = [];
 //console.log(avgTempsMax);
