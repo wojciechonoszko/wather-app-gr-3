@@ -2,7 +2,7 @@ const dayNowRef = document.querySelector('.calendar__current-day__text');
 const monthNowRef = document.querySelector('.calendar__time__month');
 const timeNowRef = document.querySelector('.calendar__time__hour');
 
-const moment = require('moment-timezone');
+var moment = require('moment-timezone');
 
 const nth = function(d) {
     if (d > 3 && d < 21) return 'th';
