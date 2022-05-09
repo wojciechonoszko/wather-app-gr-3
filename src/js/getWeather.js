@@ -60,6 +60,7 @@ import '../sass/main.css';
 
 const oneDayBtn = document.querySelector('.daysButtons__today');
 const fiveDaysBtn = document.querySelector('.show-five-days-btn');
+const quoteContainer = document.querySelector('.quote');
 
 const fiveDaysList = document.querySelector('.five-days-list');
 const fiveDaysContainer = document.querySelector('.five-days');
@@ -87,6 +88,7 @@ function fiveDaysDisplay() {
   fiveDaysHidden.classList.toggle('is-closed');
   calendarContainer.classList.toggle('is-closed');
   currentDayContainer.classList.toggle('is-closed');
+  quoteContainer.classList.toggle('is-closed');
 }
 
 fiveDaysBtn.addEventListener("click", fiveDaysDisplay);
