@@ -343,6 +343,8 @@ body {
   text-transform: uppercase;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  
 }
 
 .daysButtons--active {
@@ -357,6 +359,9 @@ body {
 
 .calendar {
   margin-top: 30px;
+}
+.calendar.is-closed{
+  display:none;
 }
 
 .calendar__wrapper {
@@ -1028,7 +1033,7 @@ margin: 10px;
 position: relative;
 width: 126px;
 height: 28px;
-left: 1044px;
+/* left: 1044px; */
 
 
 background: #FFFFFF;
