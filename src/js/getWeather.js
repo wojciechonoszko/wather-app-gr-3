@@ -262,6 +262,7 @@ humFiveDays.textContent = `${humidity[i]} %`;
 
 function moreInfoDisplay() {
   moreInfoListHidden.classList.toggle('is-closed'); 
+  
 }
 
 function moreInfoDisplayTwo() {
