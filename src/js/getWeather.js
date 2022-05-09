@@ -58,8 +58,11 @@ import '../sass/main.css';
 
  const ctx = document.getElementById('myChart');
 
+const oneDayBtn = document.querySelector('.daysButtons__today');
 const fiveDaysBtn = document.querySelector('.show-five-days-btn');
+
 const fiveDaysList = document.querySelector('.five-days-list');
+const fiveDaysContainer = document.querySelector('.five-days');
 const fiveDaysHidden = document.querySelector('.five-days-hidden');
 const moreInfoListHidden = document.querySelector('.more-info-hidden');
 const moreInfoList = document.querySelector('.more-info-list')
@@ -68,6 +71,8 @@ const chartShowBtnCtn = document.querySelector('.chart-show-button-container');
 const chartCloseBtn = document.querySelector('.chart-hide-link');
 const chartContainer = document.querySelector('.chart-cnt');
 
+const calendarContainer = document.querySelector('.calendar');
+const currentDayContainer = document.querySelector('.currentDay');
 
 
 
@@ -78,10 +83,14 @@ function chartDisplay() {
   
 }
 function fiveDaysDisplay() {
+  fiveDaysContainer.classList.toggle('is-closed');
   fiveDaysHidden.classList.toggle('is-closed');
+  calendarContainer.classList.toggle('is-closed');
+  currentDayContainer.classList.toggle('is-closed');
 }
 
 fiveDaysBtn.addEventListener("click", fiveDaysDisplay);
+oneDayBtn.addEventListener("click", fiveDaysDisplay);
    
 
  chartShowBtn.addEventListener('click', chartDisplay);
