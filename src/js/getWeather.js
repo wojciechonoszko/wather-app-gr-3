@@ -94,12 +94,8 @@ function chartDisplay() {
   
 }
 function fiveDaysDisplay() {
-  if (oneDayBtn.disabled === false){
-    oneDayBtn.disabled = true
-  }
-  else {
-    oneDayBtn.disabled=false
-  }
+  fiveDaysBtn.disabled = true;
+  oneDayBtn.disabled = false;
   
   fiveDaysContainer.classList.toggle('is-closed');
   fiveDaysHidden.classList.toggle('is-closed');
@@ -108,9 +104,23 @@ function fiveDaysDisplay() {
   quoteContainer.classList.toggle('is-closed');
 };
 
+function oneDayDisplay() {
+  fiveDaysBtn.disabled = false;
+  oneDayBtn.disabled = true;
+  
+  fiveDaysContainer.classList.toggle('is-closed');
+  fiveDaysHidden.classList.toggle('is-closed');
+  calendarContainer.classList.toggle('is-closed');
+  currentDayContainer.classList.toggle('is-closed');
+  quoteContainer.classList.toggle('is-closed');
+
+  chartShowBtn.classList.toggle('is-closed');
+  chartContainer.classList.toggle('is-closed');
+};
+
 
 fiveDaysBtn.addEventListener("click", fiveDaysDisplay);
-oneDayBtn.addEventListener("click", fiveDaysDisplay);
+oneDayBtn.addEventListener("click", oneDayDisplay);
    
 
  chartShowBtn.addEventListener('click', chartDisplay);
