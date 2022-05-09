@@ -347,9 +347,7 @@ body {
   
 }
 
-.daysButtons--active {
-  background-color: #ffffff;
-}
+
 
 @media (min-width: 768px) {
   .daysButtons__today {
