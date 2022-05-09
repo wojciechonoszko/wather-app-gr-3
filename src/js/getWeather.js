@@ -519,45 +519,7 @@ console.log(avgTemps);
 
 
 
-// for (let object of dayOne) {
-  
-//     // console.log(object);
-//     // console.log(object.dt);
-//     // console.log(object.pop);
-// };
-//   const lodash = require('lodash'); 
-//   for (let object of dayOne) {
-//   dayOneTempsMax.push(object.main.temp_max)
-   
-// };
-// let avgDayOneTempMax = ((lodash.sum(dayOneTempsMax))/ dayTwo.length).toFixed(1)
 
-// console.log(avgDayOneTempMax);
-// //console.log(dayOneTempsMax);
-
-// for (let object of dayTwo) {
-//   dayTwoTempsMax.push(object.main.temp_max);
-// }
-
-// let avgDayTwoTempMax = ((lodash.sum(dayTwoTempsMax))/ dayTwo.length).toFixed(1)
-// console.log(avgDayTwoTempMax);  
-
-
-
-
-
-// function renderFiveDaysList(elements) {
-//   const markup = elements
-//     .map((element) => {
-//       return `<li>
-//           <p><b>Name</b>: ${element.main.temp}</p>
-//           <p><b>Email</b>: ${element.main.humidity}</p>
-//           <p><b>Company</b>: ${element.main.pressure}</p>
-//         </li>`;
-//     })
-//     .join("");
-//   fiveDaysList.innerHTML = markup;
-// }
 
 
 const date = new Date();
