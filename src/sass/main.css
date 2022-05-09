@@ -1203,7 +1203,10 @@ opacity: 0.54;
 }
 
 .more-info-ul,
-.more-info-ul-two {
+.more-info-ul-two,
+.more-info-ul-three,
+.more-info-ul-four,
+.more-info-ul-five {
   float: left;
   margin-left: 30px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1211,7 +1214,10 @@ opacity: 0.54;
 }
 
 .more-info-list,
-.more-info-list-two {
+.more-info-list-two,
+.more-info-list-three,
+.more-info-list-four,
+.more-info-list-five {
   display: inline-block;
   margin: auto;
   margin-top: 20px;

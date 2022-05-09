@@ -70,6 +70,12 @@ const moreInfoListHidden = document.querySelector('.more-info-hidden');
 const moreInfoList = document.querySelector('.more-info-list');
 const moreInfoListHiddenTwo = document.querySelector('.more-info-hidden-two');
 const moreInfoListTwo = document.querySelector('.more-info-list-two');
+const moreInfoListHiddenThree = document.querySelector('.more-info-hidden-three');
+const moreInfoListThree = document.querySelector('.more-info-list-three');
+const moreInfoListHiddenFour = document.querySelector('.more-info-hidden-four');
+const moreInfoListFour = document.querySelector('.more-info-list-four');
+const moreInfoListHiddenFive = document.querySelector('.more-info-hidden-five');
+const moreInfoListFive = document.querySelector('.more-info-list-five');
 
 const chartShowBtn = document.querySelector('.chart-show-link');
 const chartShowBtnCtn = document.querySelector('.chart-show-button-container');
@@ -235,21 +241,33 @@ humFiveDays.textContent = `${humidity[i]} %`;
     
   }).then(moreInfo)
   .then(moreInfoTwo)
-  
+  .then(moreInfoThree)
+  .then(moreInfoFour)
+  .then(moreInfoFive)
 };
 
 
-function moreInfoDisplayTwo() {
-  
-  moreInfoListHiddenTwo.classList.toggle('is-closed');
-  
-}
+
 
 
 function moreInfoDisplay() {
-  moreInfoListHidden.classList.toggle('is-closed');
-  
-  
+  moreInfoListHidden.classList.toggle('is-closed'); 
+}
+
+function moreInfoDisplayTwo() {
+  moreInfoListHiddenTwo.classList.toggle('is-closed');
+}
+
+function moreInfoDisplayThree() {
+  moreInfoListHiddenThree.classList.toggle('is-closed'); 
+}
+
+function moreInfoDisplayFour() {
+  moreInfoListHiddenFour.classList.toggle('is-closed'); 
+}
+
+function moreInfoDisplayFive() {
+  moreInfoListHiddenFive.classList.toggle('is-closed'); 
 }
 
 
@@ -334,6 +352,132 @@ iconDayTwo.className = `icon-${classIcon[i]}`;
       listItem.appendChild(windDayTwo);
   i+=1;
   moreInfoListTwo.appendChild(listItem);
+}
+}
+
+function moreInfoThree(){
+  const moreInfoBtn = document.querySelector(`.more-info2`);
+  moreInfoBtn.addEventListener('click', moreInfoDisplayThree);
+  let i=0;
+  for (const elem of dayThreeTemps){
+  //console.log(dayOneTemps);
+  let hour = document.createElement('li');
+  hour.className = 'hour';
+  hour.textContent = `${hours[i]}`;
+
+  let iconDayThree = document.createElement('img');
+iconDayThree.className = `icon-${classIcon[i]}`;
+
+  let tempDayThree = document.createElement('li');
+  tempDayThree.className = 'temp-day-one';
+  tempDayThree.textContent = `${dayThreeTemps[i].toFixed(1)} °C`;
+
+  let pressureDayThree = document.createElement('li');
+  pressureDayThree.className = 'pressure-day-one';
+  pressureDayThree.textContent = `${dayThreePressure[i]} hPa`;
+
+  let humidityDayThree = document.createElement('li');
+  humidityDayThree.className = 'humidity-day-one';
+  humidityDayThree.textContent = `${dayThreeHumidity[i]} %`;
+
+  let windDayThree = document.createElement('li');
+  windDayThree.className = 'wind-day-one';
+  windDayThree.textContent = `${dayThreeWind[i].toFixed(1)} m/s`;
+
+  let listItem = document.createElement('ul');
+      listItem.className =  'more-info-ul-three';
+      listItem.appendChild(hour);
+      listItem.appendChild(iconDayThree);
+      listItem.appendChild(tempDayThree);
+      listItem.appendChild(pressureDayThree);
+      listItem.appendChild(humidityDayThree);
+      listItem.appendChild(windDayThree);
+  i+=1;
+  moreInfoListThree.appendChild(listItem);
+}
+}
+
+function moreInfoFour(){
+  const moreInfoBtn = document.querySelector(`.more-info3`);
+  moreInfoBtn.addEventListener('click', moreInfoDisplayFour);
+  let i=0;
+  for (const elem of dayFourTemps){
+  //console.log(dayOneTemps);
+  let hour = document.createElement('li');
+  hour.className = 'hour';
+  hour.textContent = `${hours[i]}`;
+
+  let iconDay = document.createElement('img');
+iconDay.className = `icon-${classIcon[i]}`;
+
+  let tempDay = document.createElement('li');
+  tempDay.className = 'temp-day-one';
+  tempDay.textContent = `${dayFourTemps[i].toFixed(1)} °C`;
+
+  let pressureDay = document.createElement('li');
+  pressureDay.className = 'pressure-day-one';
+  pressureDay.textContent = `${dayFourPressure[i]} hPa`;
+
+  let humidityDay = document.createElement('li');
+  humidityDay.className = 'humidity-day-one';
+  humidityDay.textContent = `${dayFourHumidity[i]} %`;
+
+  let windDay = document.createElement('li');
+  windDay.className = 'wind-day-one';
+  windDay.textContent = `${dayFourWind[i].toFixed(1)} m/s`;
+
+  let listItem = document.createElement('ul');
+      listItem.className =  'more-info-ul-four';
+      listItem.appendChild(hour);
+      listItem.appendChild(iconDay);
+      listItem.appendChild(tempDay);
+      listItem.appendChild(pressureDay);
+      listItem.appendChild(humidityDay);
+      listItem.appendChild(windDay);
+  i+=1;
+  moreInfoListFour.appendChild(listItem);
+}
+}
+
+function moreInfoFive(){
+  const moreInfoBtn = document.querySelector(`.more-info4`);
+  moreInfoBtn.addEventListener('click', moreInfoDisplayFive);
+  let i=0;
+  for (const elem of dayFourTemps){
+  //console.log(dayOneTemps);
+  let hour = document.createElement('li');
+  hour.className = 'hour';
+  hour.textContent = `${hours[i]}`;
+
+  let iconDay = document.createElement('img');
+iconDay.className = `icon-${classIcon[i]}`;
+
+  let tempDay = document.createElement('li');
+  tempDay.className = 'temp-day-one';
+  tempDay.textContent = `${dayFiveTemps[i].toFixed(1)} °C`;
+
+  let pressureDay = document.createElement('li');
+  pressureDay.className = 'pressure-day-one';
+  pressureDay.textContent = `${dayFivePressure[i]} hPa`;
+
+  let humidityDay = document.createElement('li');
+  humidityDay.className = 'humidity-day-one';
+  humidityDay.textContent = `${dayFiveHumidity[i]} %`;
+
+  let windDay = document.createElement('li');
+  windDay.className = 'wind-day-one';
+  windDay.textContent = `${dayFiveWind[i].toFixed(1)} m/s`;
+
+  let listItem = document.createElement('ul');
+      listItem.className =  'more-info-ul-five';
+      listItem.appendChild(hour);
+      listItem.appendChild(iconDay);
+      listItem.appendChild(tempDay);
+      listItem.appendChild(pressureDay);
+      listItem.appendChild(humidityDay);
+      listItem.appendChild(windDay);
+  i+=1;
+  moreInfoListFive.appendChild(listItem);
 }
 }
 
@@ -436,15 +580,31 @@ function iterArray(){
 
   generateHours(dayOne, hours);
   generateHours(dayTwo, hours);
+  generateHours(dayThree, hours);
+  generateHours(dayFour, hours);
+  generateHours(dayFive, hours);
 
   pressureInject(dayOne, dayOnePressure);
   pressureInject(dayTwo, dayTwoPressure);
+  pressureInject(dayOne, dayThreePressure);
+  pressureInject(dayTwo, dayFourPressure);
+  pressureInject(dayOne, dayFivePressure);
+  
 
   humidityInject(dayOne, dayOneHumidity);
   humidityInject(dayTwo, dayTwoHumidity);
+  humidityInject(dayOne, dayThreeHumidity);
+  humidityInject(dayTwo, dayFourHumidity);
+  humidityInject(dayOne, dayFiveHumidity);
+  
 
   windInject(dayOne, dayOneWind);
   windInject(dayTwo, dayTwoWind);
+  windInject(dayThree, dayThreeWind);
+  windInject(dayFour, dayFourWind);
+  windInject(dayFive, dayFiveWind);
+  
+
 
   }
 
