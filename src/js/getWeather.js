@@ -221,7 +221,7 @@ minSpan.textContent = 'min';
 
 let minTemperature = document.createElement('li');
 minTemperature.className = 'min-temp-five-days';
-minTemperature.textContent =  `${minTempsValues[i]} °C`;
+minTemperature.textContent =  `${minTempsValues[i]}°`;
 minTemperature.prepend(minSpan);
 
 let maxSpan = document.createElement('span');
@@ -233,7 +233,7 @@ maxSpan.textContent = 'max';
 
 let maxTemperature = document.createElement('li');
 maxTemperature.className = 'max-temp-five-days';
-maxTemperature.textContent = `${maxTempsValues[i]} °C`;
+maxTemperature.textContent = `${maxTempsValues[i]}°`;
 maxTemperature.prepend(maxSpan);
 
 let verticalBorder = document.createElement('div');
