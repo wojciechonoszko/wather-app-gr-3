@@ -190,6 +190,8 @@ function getWeatherFiveDays(city) {
    
   }).then(iterArray)
   .then(data => {
+  
+  
     let i = 0;
     
     for (const date of dates){
@@ -252,6 +254,7 @@ humFiveDays.textContent = `${humidity[i]} %`;
 
 
       let listItem = document.createElement('ul');
+      listItem.className = 'five-days-ul';
       listItem.appendChild(dateFiveDays);
       //listItem.appendChild(tempFiveDays);
       // listItem.appendChild(minTemperature ,maxTemperature);
@@ -280,7 +283,15 @@ humFiveDays.textContent = `${humidity[i]} %`;
   .then(moreInfoFive)
 };
 
-
+function removeList(){
+  const elem = document.querySelector('.five-days-ul');
+  console.log(elem)
+  
+  if(elem !== null){
+    elem.remove();
+    window.location.reload();
+  }
+}
 
 
 
@@ -1044,12 +1055,16 @@ let myLineChart = new Chart(ctx, {
 // ==================================================================
 
 refs.searchForm.addEventListener('submit', evt => {
+  removeList();
   evt.preventDefault();
+  
+  
   const value = searchForm.querySelector('input[name="city"]').value;
   const userInput = cityValue.value.trim();
   if (userInput === "") {
     return
   }
+  
   setBackground(userInput);
   getWeatherByCity(userInput);
   getWeatherFiveDays(userInput);
