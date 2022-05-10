@@ -252,7 +252,7 @@ humFiveDays.textContent = `${humidity[i]} %`;
 
 
 
-
+      
       let listItem = document.createElement('ul');
       listItem.className = 'five-days-ul';
       listItem.appendChild(dateFiveDays);
@@ -269,7 +269,8 @@ humFiveDays.textContent = `${humidity[i]} %`;
      
       
     //console.log(i);
-      fiveDaysList.appendChild(listItem);
+      
+      fiveDaysList.append(listItem);
 
     //let moreInfoBtn = document.querySelector(`.more-info${i}`);
     
@@ -284,13 +285,25 @@ humFiveDays.textContent = `${humidity[i]} %`;
 };
 
 function removeList(){
-  const elem = document.querySelector('.five-days-ul');
+  
+  let elem = document.querySelector('.five-days-list');
+  let elemTwo = document.querySelector('.five-days-ul');
+  
   console.log(elem)
   
-  if(elem !== null){
-    elem.remove();
+  if(elemTwo !== null){
+    // elemTwo.innerHTML = "";
     window.location.reload();
+    
   }
+  
+  //   const value = searchForm.querySelector('input[name="city"]').value;
+  // const userInput = cityValue.value.trim();
+  // if (userInput === "") {
+  //   return
+  // }
+  //   getWeatherFiveDays(userInput);
+  
 }
 
 
