@@ -221,7 +221,7 @@ minSpan.textContent = 'min';
 
 let minTemperature = document.createElement('li');
 minTemperature.className = 'min-temp-five-days';
-minTemperature.textContent =  `${minTempsValues[i]} °C`;
+minTemperature.textContent =  `${minTempsValues[i]}°`;
 minTemperature.prepend(minSpan);
 
 let maxSpan = document.createElement('span');
@@ -233,7 +233,7 @@ maxSpan.textContent = 'max';
 
 let maxTemperature = document.createElement('li');
 maxTemperature.className = 'max-temp-five-days';
-maxTemperature.textContent = `${maxTempsValues[i]} °C`;
+maxTemperature.textContent = `${maxTempsValues[i]}°`;
 maxTemperature.prepend(maxSpan);
 
 let verticalBorder = document.createElement('div');
@@ -252,7 +252,7 @@ humFiveDays.textContent = `${humidity[i]} %`;
 
 
 
-
+      
       let listItem = document.createElement('ul');
       listItem.className = 'five-days-ul';
       listItem.appendChild(dateFiveDays);
@@ -269,7 +269,8 @@ humFiveDays.textContent = `${humidity[i]} %`;
      
       
     //console.log(i);
-      fiveDaysList.appendChild(listItem);
+      
+      fiveDaysList.append(listItem);
 
     //let moreInfoBtn = document.querySelector(`.more-info${i}`);
     
@@ -284,13 +285,25 @@ humFiveDays.textContent = `${humidity[i]} %`;
 };
 
 function removeList(){
-  const elem = document.querySelector('.five-days-ul');
+  
+  let elem = document.querySelector('.five-days-list');
+  let elemTwo = document.querySelector('.five-days-ul');
+  
   console.log(elem)
   
-  if(elem !== null){
-    elem.remove();
+  if(elemTwo !== null){
+    // elemTwo.innerHTML = "";
     window.location.reload();
+    
   }
+  
+  //   const value = searchForm.querySelector('input[name="city"]').value;
+  // const userInput = cityValue.value.trim();
+  // if (userInput === "") {
+  //   return
+  // }
+  //   getWeatherFiveDays(userInput);
+  
 }
 
 

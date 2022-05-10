@@ -1058,6 +1058,7 @@ border-radius: 20px;
   
   color: #000000;
   }
+
 .five-days {
   background: rgba(16, 33, 54, 0.8);
   box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
@@ -1066,6 +1067,11 @@ border-radius: 20px;
 
 margin-left:auto;
 margin-right:auto;
+}
+@media only screen and (max-width: 1280px) {
+  .five-days {
+  width: 620px;
+  }
 }
 .five-days-list {
   display: flex;
@@ -1104,6 +1110,12 @@ text-align: center;
 letter-spacing: 0.04em;
 
 color: #FFFFFF;
+}
+
+@media only screen and (max-width: 1280px) {
+  .date-five-days {
+    font-size: 18px;
+  }
 }
 .more-info0:hover,
 .more-info1:hover,
@@ -1177,7 +1189,7 @@ opacity: 0.3;
 .temp-container {
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content:center;
   margin-top:15px;
   margin-bottom: 15px;
 
@@ -1202,10 +1214,19 @@ text-align: center;
 color: #FF6B09;
 }
 
+@media only screen and (max-width: 1280px){
+  .min-temp-five-days,
+  .max-temp-five-days{
+    font-size: 18px;
+  }
+}
+
 .vertical-border {
   opacity: 0.2;
   border-left: 1px solid #FFFFFF;
   height: 46px;
+  margin-left: 5px;
+  margin-right: 5px;
   margin-top:auto;
   margin-bottom: auto;
   
@@ -1264,4 +1285,10 @@ line-height: 22px;
 color: #FFFFFF;
 
 opacity: 0.55;
+}
+
+@media only screen and (max-width: 1280px){
+  .min-span{
+    font-size: 14px;
+  }
 }
