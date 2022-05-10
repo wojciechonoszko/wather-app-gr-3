@@ -212,13 +212,36 @@ let tempFiveDays = document.createElement('li');
 tempFiveDays.className = 'temp-five-days';
 tempFiveDays.textContent = `${avgTemps[i]} °C`;
 
+let minSpan = document.createElement('span');
+minSpan.className = 'min-span';
+minSpan.textContent = 'min';
+
+
 let minTemperature = document.createElement('li');
 minTemperature.className = 'min-temp-five-days';
-minTemperature.textContent = `min ${minTempsValues[i]} °C`;
+minTemperature.textContent =  `${minTempsValues[i]} °C`;
+minTemperature.prepend(minSpan);
+
+let maxSpan = document.createElement('span');
+maxSpan.className = 'min-span';
+maxSpan.textContent = 'max';
+
+
+
 
 let maxTemperature = document.createElement('li');
 maxTemperature.className = 'max-temp-five-days';
-maxTemperature.textContent = `max ${maxTempsValues[i]} °C`;
+maxTemperature.textContent = `${maxTempsValues[i]} °C`;
+maxTemperature.prepend(maxSpan);
+
+let verticalBorder = document.createElement('div');
+verticalBorder.className = 'vertical-border';
+
+let tempContainer = document.createElement('li');
+tempContainer.className = 'temp-container';
+tempContainer.appendChild(minTemperature);
+tempContainer.appendChild(verticalBorder);
+tempContainer.appendChild(maxTemperature);
 
 
 let humFiveDays = document.createElement('li');
@@ -231,10 +254,11 @@ humFiveDays.textContent = `${humidity[i]} %`;
       let listItem = document.createElement('ul');
       listItem.appendChild(dateFiveDays);
       //listItem.appendChild(tempFiveDays);
-      listItem.appendChild(minTemperature ,maxTemperature);
-      listItem.appendChild(maxTemperature);
+      // listItem.appendChild(minTemperature ,maxTemperature);
+      // listItem.appendChild(maxTemperature);
       //listItem.appendChild(iconFiveDays);
       listItem.appendChild(iconDayOne);
+      listItem.appendChild(tempContainer)
       //listItem.appendChild(humFiveDays);
       listItem.appendChild(moreInfoBtn);
       
@@ -262,23 +286,43 @@ humFiveDays.textContent = `${humidity[i]} %`;
 
 function moreInfoDisplay() {
   moreInfoListHidden.classList.toggle('is-closed'); 
-  
+  moreInfoListHiddenTwo.classList.add('is-closed');
+  moreInfoListHiddenThree.classList.add('is-closed');
+  moreInfoListHiddenFour.classList.add('is-closed');
+  moreInfoListHiddenFive.classList.add('is-closed'); 
 }
 
 function moreInfoDisplayTwo() {
+  moreInfoListHidden.classList.add('is-closed');
   moreInfoListHiddenTwo.classList.toggle('is-closed');
+  moreInfoListHiddenThree.classList.add('is-closed');
+  moreInfoListHiddenFour.classList.add('is-closed');
+  moreInfoListHiddenFive.classList.add('is-closed'); 
+  
 }
 
 function moreInfoDisplayThree() {
-  moreInfoListHiddenThree.classList.toggle('is-closed'); 
+  moreInfoListHiddenThree.classList.toggle('is-closed');
+  moreInfoListHidden.classList.add('is-closed');
+  moreInfoListHiddenTwo.classList.add('is-closed');
+  moreInfoListHiddenFour.classList.add('is-closed');
+  moreInfoListHiddenFive.classList.add('is-closed'); 
 }
 
 function moreInfoDisplayFour() {
-  moreInfoListHiddenFour.classList.toggle('is-closed'); 
+  moreInfoListHiddenFour.classList.toggle('is-closed');
+  moreInfoListHidden.classList.add('is-closed');
+  moreInfoListHiddenTwo.classList.add('is-closed');
+  moreInfoListHiddenThree.classList.add('is-closed');
+  moreInfoListHiddenFive.classList.add('is-closed');  
 }
 
 function moreInfoDisplayFive() {
-  moreInfoListHiddenFive.classList.toggle('is-closed'); 
+  moreInfoListHiddenFive.classList.toggle('is-closed');
+  moreInfoListHidden.classList.add('is-closed');
+  moreInfoListHiddenTwo.classList.add('is-closed');
+  moreInfoListHiddenFour.classList.add('is-closed');
+  moreInfoListHiddenThree.classList.add('is-closed');  
 }
 
 

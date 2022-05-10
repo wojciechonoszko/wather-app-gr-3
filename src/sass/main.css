@@ -1084,14 +1084,14 @@ ul {
 .date-five-days {
 display:flex;
 justify-content: center;
-margin: 10px;
+margin: 15px;
 padding: 0px;
 list-style-type: none;  
 text-decoration: none;
 font-family: 'Lato';
 font-style: normal;
 font-weight: 400;
-font-size: 25px;
+font-size: 22px;
 line-height: 30px;
 /* identical to box height */
 
@@ -1109,6 +1109,8 @@ color: #FFFFFF;
 .more-info2,
 .more-info3,
 .more-info4 {
+  margin-left: auto;
+  margin-right: auto;
   justify-content: center;
   position: relative;
   width: 82px;
@@ -1162,7 +1164,14 @@ opacity: 0.3;
   content: url('../images/sunsnow.png');
 }
 
+.temp-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  margin-top:15px;
+  margin-bottom: 15px;
 
+}
 
 .min-temp-five-days,
 .max-temp-five-days,
@@ -1170,16 +1179,28 @@ opacity: 0.3;
 font-family: 'Lato';
 font-style: normal;
 font-weight: 700;
-font-size: 25px;
+font-size: 22px;
 line-height: 30px;
 /* identical to box height */
 
 display: flex;
+flex-direction: column;
 justify-content:center;
 align-items: center;
 text-align: center;
 
 color: #FF6B09;
+}
+
+.vertical-border {
+  opacity: 0.2;
+  border-left: 1px solid #FFFFFF;
+  height: 46px;
+  margin-top:auto;
+  margin-bottom: auto;
+  
+
+  
 }
 
 .wind-day-one,
@@ -1222,4 +1243,15 @@ opacity: 0.54;
   margin: auto;
   margin-top: 20px;
   padding: auto
+}
+
+.min-span {
+  font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: #FFFFFF;
+
+opacity: 0.55;
 }
