@@ -334,7 +334,10 @@ body {
   }
 }
 
-.daysButtons__today, .daysButtons__5days {
+.daysButtons__today:hover {
+  cursor:pointer;
+}
+.daysButtons__today {
   width: 126px;
   height: 27px;
   font-weight: 700;
@@ -1021,7 +1024,9 @@ body {
     width: 100%;
   }
 
-
+.show-five-days-btn:hover{
+  cursor:pointer;
+}
 
 .show-five-days-btn {
 display: flex;
@@ -1100,8 +1105,13 @@ letter-spacing: 0.04em;
 
 color: #FFFFFF;
 }
-.more-info:hover {
+.more-info0:hover,
+.more-info1:hover,
+.more-info2:hover,
+.more-info3:hover,
+.more-info4:hover {
   color: yellow;
+  cursor: pointer;
 }
 .more-info,
 .more-info0,
