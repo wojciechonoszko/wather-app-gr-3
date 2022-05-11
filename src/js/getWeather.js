@@ -259,13 +259,10 @@ humFiveDays.textContent = `${humidity[i]} %`;
       let listItem = document.createElement('ul');
       listItem.className = 'five-days-ul';
       listItem.appendChild(dateFiveDays);
-      //listItem.appendChild(tempFiveDays);
-      // listItem.appendChild(minTemperature ,maxTemperature);
-      // listItem.appendChild(maxTemperature);
-      //listItem.appendChild(iconFiveDays);
+     
       listItem.appendChild(iconDayOne);
       listItem.appendChild(tempContainer)
-      //listItem.appendChild(humFiveDays);
+      
       listItem.appendChild(moreInfoBtn);
       
       
@@ -275,7 +272,7 @@ humFiveDays.textContent = `${humidity[i]} %`;
       
       fiveDaysList.append(listItem);
 
-    //let moreInfoBtn = document.querySelector(`.more-info${i}`);
+    
     
     i+=1; 
     }
