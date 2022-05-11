@@ -682,6 +682,7 @@ body {
 @media screen and (max-width: 768px) {
   .daysList {
     overflow: scroll;
+    max-width: 1600px;
   }
 }
 
@@ -1175,7 +1176,8 @@ opacity: 0.3;
   display:flex;
   justify-content: center;
     margin: auto;
-    width: 35px;
+    width: 25%;
+    height: 35px;
     
     border-radius: 50%;
     content: url('../images/sunny.png');
@@ -1189,6 +1191,24 @@ opacity: 0.3;
   content: url('../images/cloud.png');
 }
 
+@media only screen and (max-width: 768px) {
+  .icon-Rain,
+.icon-Clouds,
+.icon-Clear,
+.icon-Snow {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .icon-Rain,
+.icon-Clouds,
+.icon-Clear,
+.icon-Snow {
+    width: 30%;
+  }
+}
+  
 .icon-Clear {
   content: url('../images/sunny.png');
 }
@@ -1260,16 +1280,22 @@ color: #FF6B09;
   content: '';
   width: 21px;
   height: 22px;
-  background: url('../images/five-days/humidity (1).svg') no-repeat;
-  background-size: 21px 22px;
+  
   margin-right: 5px;
 }
+.humidity-day-one::before {
+  background: url('../images/five-days/humidity (1).svg') no-repeat;
+  background-size: 21px 22px;
+}
+
 .wind-day-one::before {
   background: url('../images/five-days/wind_change.svg') no-repeat;
+  background-size: 21px 22px;
 }
 
 .pressure-day-one::before {
-  background: url('../images/five-days/barometr_change.svg') no-repeat;  
+  background: url('../images/five-days/barometr_change.svg') no-repeat;
+  background-size: 21px 22px;  
 }
 
 .wind-day-one,
@@ -1323,7 +1349,7 @@ opacity: 0.54;
 .more-info-ul-five{
   
   margin-left: 20px;
-  width: 90px;
+  width: auto;
   
   border-radius: 25px;
 }
@@ -1353,6 +1379,7 @@ opacity: 0.54;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
+  
   
 }
 }
