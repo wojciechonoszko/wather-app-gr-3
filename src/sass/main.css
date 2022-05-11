@@ -894,7 +894,7 @@ body {
     background: rgba(16, 33, 54, 0.8);
     box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
     border-radius: 34px;
-    margin-top: 100px;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     padding-right: 30px;
@@ -923,10 +923,10 @@ body {
   }
   .chart-show-button-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: row;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .chart-show-link,
   .chart-hide-link {
@@ -1073,6 +1073,14 @@ margin-right:auto;
   width: 620px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .five-days {
+    width: 280px;
+    resize: both;
+    overflow: auto;
+  }
+}
 .five-days-list {
   display: flex;
   flex-direction: row;
@@ -1117,6 +1125,12 @@ color: #FFFFFF;
     font-size: 18px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .date-five-days {
+    font-size: 14px;
+  }
+}
 .more-info0:hover,
 .more-info1:hover,
 .more-info2:hover,
@@ -1131,6 +1145,7 @@ color: #FFFFFF;
 .more-info2,
 .more-info3,
 .more-info4 {
+  margin: 10px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -1290,5 +1305,11 @@ opacity: 0.55;
 @media only screen and (max-width: 1280px){
   .min-span{
     font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .min-span{
+    font-size: 12px;
   }
 }
