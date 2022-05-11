@@ -1236,6 +1236,13 @@ color: #FF6B09;
   }
 }
 
+@media only screen and (max-width- 768px) {
+  .min-temp-five-days,
+  .max-temp-five-days{
+    font-size:14px;
+  }
+}
+
 .vertical-border {
   opacity: 0.2;
   border-left: 1px solid #FFFFFF;
@@ -1290,6 +1297,19 @@ opacity: 0.54;
   margin-top: 20px;
   padding: auto
 }
+
+@media only screen and (max-width: 768px) {
+  .more-info-list,
+.more-info-list-two,
+.more-info-list-three,
+.more-info-list-four,
+.more-info-list-five {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+}
+
 
 .min-span {
   font-family: 'Lato';
