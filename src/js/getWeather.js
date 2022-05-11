@@ -77,7 +77,9 @@ const moreInfoListFour = document.querySelector('.more-info-list-four');
 const moreInfoListHiddenFive = document.querySelector('.more-info-hidden-five');
 const moreInfoListFive = document.querySelector('.more-info-list-five');
 
+
 const chartShowBtn = document.querySelector('.chart-show-link');
+const chartShowBtnCtnHidden = document.querySelector('.chart-button-hidden');
 const chartShowBtnCtn = document.querySelector('.chart-show-button-container');
 const chartCloseBtn = document.querySelector('.chart-hide-link');
 const chartContainer = document.querySelector('.chart-cnt');
@@ -102,6 +104,7 @@ function fiveDaysDisplay() {
   calendarContainer.classList.toggle('is-closed');
   currentDayContainer.classList.toggle('is-closed');
   quoteContainer.classList.toggle('is-closed');
+  chartShowBtnCtnHidden.classList.toggle('is-closed');
 };
 
 function oneDayDisplay() {
@@ -114,7 +117,7 @@ function oneDayDisplay() {
   currentDayContainer.classList.toggle('is-closed');
   quoteContainer.classList.toggle('is-closed');
 
-  chartShowBtn.classList.toggle('is-closed');
+  chartShowBtnCtnHidden.classList.toggle('is-closed');
   chartContainer.classList.toggle('is-closed');
 };
 
