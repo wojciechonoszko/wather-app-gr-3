@@ -780,20 +780,13 @@ body {
   
 }
 
-.more-info,
-.more-info0,
-.more-info1 {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-  background-color: rgba(16, 33, 54, 0.8);
-}
 
-@media screen and (max-width: 1280px) {
+
+/* @media screen and (max-width: 1280px) {
   .more-info {
     overflow: scroll;
   }
-}
+} */
 
 .more-info__list {
   padding-top: 8px;
@@ -1076,7 +1069,7 @@ margin-right:auto;
 
 @media only screen and (max-width: 768px) {
   .five-days {
-    width: 280px;
+    width: 300px;
     resize: both;
     overflow: auto;
   }
@@ -1084,14 +1077,17 @@ margin-right:auto;
 .five-days-list {
   display: flex;
   flex-direction: row;
-  /* position: relative; */
-
-/* left: 110px; */
-
 margin-left:auto;
 margin-right:auto;
 
 
+}
+.five-days-ul {
+  margin-top: 15px;
+}
+.five-days-ul:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
 }
 ul {
   margin-left: auto;
@@ -1145,7 +1141,7 @@ color: #FFFFFF;
 .more-info2,
 .more-info3,
 .more-info4 {
-  margin: 10px;
+  margin: 20px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -1236,6 +1232,13 @@ color: #FF6B09;
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .min-temp-five-days,
+  .max-temp-five-days{
+    font-size:16px;
+  }
+}
+
 .vertical-border {
   opacity: 0.2;
   border-left: 1px solid #FFFFFF;
@@ -1249,6 +1252,26 @@ color: #FF6B09;
   
 }
 
+.wind-day-one::before,
+.humidity-day-one::before,
+.pressure-day-one::before {
+  display: inline-block;
+  /* content: url('../images/five-days/humidity (1).svg'); */
+  content: '';
+  width: 21px;
+  height: 22px;
+  background: url('../images/five-days/humidity (1).svg') no-repeat;
+  background-size: 21px 22px;
+  margin-right: 5px;
+}
+.wind-day-one::before {
+  background: url('../images/five-days/wind_change.svg') no-repeat;
+}
+
+.pressure-day-one::before {
+  background: url('../images/five-days/barometr_change.svg') no-repeat;  
+}
+
 .wind-day-one,
 .humidity-day-one,
 .pressure-day-one,
@@ -1256,6 +1279,8 @@ color: #FF6B09;
 .temp-day-one {
   
 /* float: left; */
+display: flex;
+align-items: center;
 padding: 0px;
 margin: 10px;
 font-family: 'Lato';
@@ -1274,10 +1299,34 @@ opacity: 0.54;
 .more-info-ul-three,
 .more-info-ul-four,
 .more-info-ul-five {
-  float: left;
-  margin-left: 30px;
+  
+  
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 25px;
+}
+
+.more-info-ul:hover,
+.more-info-ul-two:hover,
+.more-info-ul-three:hover,
+.more-info-ul-four:hover,
+.more-info-ul-five:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media only screen and (max-width: 768px) {
+.more-info-ul,
+.more-info-ul-two,
+.more-info-ul-three,
+.more-info-ul-four,
+.more-info-ul-five{
+  
+  margin-left: 20px;
+  width: 90px;
+  
+  border-radius: 25px;
+}
 }
 
 .more-info-list,
@@ -1285,11 +1334,29 @@ opacity: 0.54;
 .more-info-list-three,
 .more-info-list-four,
 .more-info-list-five {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: auto;
   margin-top: 20px;
   padding: auto
 }
+
+@media only screen and (max-width: 768px) {
+  .more-info-list,
+.more-info-list-two,
+.more-info-list-three,
+.more-info-list-four,
+.more-info-list-five {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  
+}
+}
+
 
 .min-span {
   font-family: 'Lato';
