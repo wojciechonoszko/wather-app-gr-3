@@ -118,7 +118,7 @@ function oneDayDisplay() {
   quoteContainer.classList.toggle('is-closed');
 
   chartShowBtnCtnHidden.classList.toggle('is-closed');
-  chartContainer.classList.toggle('is-closed');
+  //chartContainer.classList.toggle('is-closed');
 };
 
 
