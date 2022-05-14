@@ -144,7 +144,8 @@ function getWeatherFiveDays(city) {
     // console.log(response.list[0].main.temp);
     // console.log(response.list[1].main.humidity);
     // console.log(response.list[2].main.pressure);
-    // console.log(response.list[3].wind.speed);
+    // console.log(response.list[3].wind.speed); days.splice(0, days.length, element)
+    
     
     const dataDays = response.list.map((element) => days.push(element));
 
@@ -196,7 +197,9 @@ function getWeatherFiveDays(city) {
   
   
     let i = 0;
-    
+    fiveDaysList.innerHTML = ""
+    // if (fiveDaysList !== null){
+    //   fiveDaysList.innerHTML = "";}
     for (const date of dates){
 let moreInfoBtn = document.createElement(`BUTTON`);
 moreInfoBtn.className = `more-info${i}`;
@@ -269,7 +272,7 @@ humFiveDays.textContent = `${humidity[i]} %`;
      
       
     //console.log(i);
-      
+    
       fiveDaysList.append(listItem);
 
     
@@ -292,7 +295,8 @@ function removeList(){
   console.log(elem)
   
   if(elemTwo !== null){
-    // elemTwo.innerHTML = "";
+    //elem.innerHTML = "";
+    //elem.remove();
     window.location.reload();
     
   }
@@ -1070,7 +1074,6 @@ let myLineChart = new Chart(ctx, {
 refs.searchForm.addEventListener('submit', evt => {
   removeList();
   evt.preventDefault();
-  
   
   const value = searchForm.querySelector('input[name="city"]').value;
   const userInput = cityValue.value.trim();
