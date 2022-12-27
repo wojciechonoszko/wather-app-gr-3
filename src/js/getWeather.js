@@ -140,11 +140,6 @@ function getWeatherFiveDays(city) {
       
       return response.json();
   }).then(response => {
-    // console.log(response);
-    // console.log(response.list[0].main.temp);
-    // console.log(response.list[1].main.humidity);
-    // console.log(response.list[2].main.pressure);
-    // console.log(response.list[3].wind.speed); days.splice(0, days.length, element)
     
     
     const dataDays = response.list.map((element) => days.push(element));
@@ -178,10 +173,6 @@ function getWeatherFiveDays(city) {
         
       
     }
-    // const avgTempMaxOne = (tempMaxOne / dayOne.length).toFixed(1);
-    // avgTempMax.push(avgTempMaxOne);
-    // const avgTempMaxTwo = (tempMaxTwo / dayOne.length).toFixed(1);
-    // avgTempMax.push(avgTempMaxTwo);
 
     const chartDataTemp = response.list.map((element) =>  temperature.push(element.main.temp) );
     const chartDataHum = response.list.map((element) => humidity.push(element.main.humidity));
@@ -267,11 +258,6 @@ humFiveDays.textContent = `${humidity[i]} %`;
       listItem.appendChild(tempContainer)
       
       listItem.appendChild(moreInfoBtn);
-      
-      
-     
-      
-    //console.log(i);
     
       fiveDaysList.append(listItem);
 
@@ -295,18 +281,9 @@ function removeList(){
   console.log(elem)
   
   if(elemTwo !== null){
-    //elem.innerHTML = "";
-    //elem.remove();
     window.location.reload();
     
   }
-  
-  //   const value = searchForm.querySelector('input[name="city"]').value;
-  // const userInput = cityValue.value.trim();
-  // if (userInput === "") {
-  //   return
-  // }
-  //   getWeatherFiveDays(userInput);
   
 }
 
@@ -359,7 +336,6 @@ function moreInfo(){
   moreInfoBtn.addEventListener('click', moreInfoDisplay);
   let i=0;
   for (const elem of dayOneTemps){
-  //console.log(dayOneTemps);
   let hour = document.createElement('li');
   hour.className = 'hour';
   hour.textContent = `${hours[i]}`;
@@ -401,7 +377,6 @@ function moreInfoTwo(){
   moreInfoBtn.addEventListener('click', moreInfoDisplayTwo);
   let i=0;
   for (const elem of dayTwoTemps){
-  //console.log(dayOneTemps);
   let hour = document.createElement('li');
   hour.className = 'hour';
   hour.textContent = `${hours[i]}`;
@@ -443,7 +418,6 @@ function moreInfoThree(){
   moreInfoBtn.addEventListener('click', moreInfoDisplayThree);
   let i=0;
   for (const elem of dayThreeTemps){
-  //console.log(dayOneTemps);
   let hour = document.createElement('li');
   hour.className = 'hour';
   hour.textContent = `${hours[i]}`;
@@ -485,7 +459,6 @@ function moreInfoFour(){
   moreInfoBtn.addEventListener('click', moreInfoDisplayFour);
   let i=0;
   for (const elem of dayFourTemps){
-  //console.log(dayOneTemps);
   let hour = document.createElement('li');
   hour.className = 'hour';
   hour.textContent = `${hours[i]}`;
@@ -527,7 +500,6 @@ function moreInfoFive(){
   moreInfoBtn.addEventListener('click', moreInfoDisplayFive);
   let i=0;
   for (const elem of dayFourTemps){
-  //console.log(dayOneTemps);
   let hour = document.createElement('li');
   hour.className = 'hour';
   hour.textContent = `${hours[i]}`;
@@ -565,14 +537,11 @@ iconDay.className = `icon-${classIcon[i]}`;
 }
 
 const temperature = [];
-//console.log(temperature);
 const humidity = [];
 const pressure = [];
 const speed = [];
 const minTemp = [];
-//console.log(minTemp);
 const maxTemp = [];
-//console.log(maxTemp);
 
 const days = [];
 console.log(days);
@@ -711,12 +680,8 @@ function pressureInject(objectArray, pushingArrayOne){
 }
 function cloudsChoice(objectArray, pushingArrayOne, pushingArrayTwo){
   let describe;
-  //console.log(objectArray);
   for (let object of objectArray){
     for (let obj of object){
-      //console.log(obj);
-    //console.log(obj.main);
-    //console.log(obj.id);
     pushingArrayOne.push(obj.main)
     }
     
@@ -729,9 +694,7 @@ function generateHours(objectArray, pushingArrayOne){
   for (let object of objectArray){
     let cutter;
     cutter = object.dt_txt.split(' ')
-    //console.log(cutter);
     pushingArrayOne.push(cutter[1])
-    //console.log(pushingArrayOne);
   }
 }
 function averageValuesTempMax(objectArray, pushingArrayOne, pushingArrayTwo) {
@@ -739,18 +702,13 @@ function averageValuesTempMax(objectArray, pushingArrayOne, pushingArrayTwo) {
   for (let object of objectArray) {
     pushingArrayOne.push(object.main.temp_max); 
   };
-  //console.log(pushingArrayOne);
   let avgTempMax = 0;
   let sumElem = 0;
-  //sumElem = lodash.sum(pushingArrayOne);
   for(let elem of pushingArrayOne){
     sumElem += elem;
   }
-  //avgTempMax = sumElem / objectArray.length;
   avgTempMax = (sumElem / objectArray.length).toFixed(1);
-  //avgTempMax = Math.round(sumElem / pushingArrayOne.length);
   
-  //console.log(avgTempMax);
   pushingArrayTwo.push(Number(avgTempMax));
   
 }
@@ -765,11 +723,7 @@ function averageValuesTempMin(objectArray, pushingArrayOne, pushingArrayTwo) {
   let avgTempMin;
   let sumElem;
   sumElem = lodash.sum(pushingArrayOne);
-  //console.log(sumElem);
   avgTempMin = (sumElem / objectArray.length).toFixed(1);
-  //avgTempMax = Math.round(sumElem / pushingArrayOne.length);
-  
-  //console.log(typeof(avgTempMin));
   
   pushingArrayTwo.push(avgTempMin);
   
@@ -784,15 +738,10 @@ function averageValuesTemp(objectArray, pushingArrayOne, pushingArrayTwo) {
   let avg;
   let sumElem;
   sumElem = lodash.sum(pushingArrayOne);
-  //console.log(sumElem);
   avg = (sumElem / objectArray.length).toFixed(1);
-  //avgTempMax = Math.round(sumElem / pushingArrayOne.length);
-  
-  //console.log(typeof(avgTempMin));
   
   pushingArrayTwo.push(avg);
   
-   
 }
 
 function maximumTempsValues(arrayOne, arrayTwo, arrayThree, arrayFour, arrayFive){
@@ -816,9 +765,7 @@ const minTempsValues = [];
 
 
 const avgTempsMax = [];
-//console.log(avgTempsMax);
 const avgTempsMin = [];
-//console.log(avgTempsMin);
 const avgTemps = [];
 console.log(avgTemps);
 
@@ -837,21 +784,15 @@ const datesInSeconds = [];
 date.setDate(date.getDate() + 1);
 for(let i=0; i <= 4; i++){
 
-// const month = date.getUTCMonth() + 1; //months from 1-12
-// const day = date.getUTCDate();
-// const year = date.getUTCFullYear();
 const newdate = date.toLocaleString('en-us',{day: 'numeric', month:'short', year:'numeric'});
-//const newdate = year + "/" + month + "/" + day;
 dates.push(newdate);
 
 let dateInSeconds =(date.getTime()/1000).toFixed(0);
-//console.log(dateInSeconds);
 datesInSeconds.push(dateInSeconds);
 date.setDate(date.getDate() + 1);
 
 }
 console.log(dates);
-//console.log(datesInSeconds);
 
 let intDates = [...datesInSeconds];
 intDates = intDates.map(Number);
@@ -873,41 +814,33 @@ let data = {
             
             
             
-            //linia
+         
             borderColor : 'rgba(255, 107, 9, 1)',
             pointBorderColor : 'rgba(255, 107, 9, 1)',
             borderWidth : 2,
-            //kolor tla i legendy
-            fill: false, //czy wypelnic zbior
-            backgroundColor : 'rgba(236,115,87,0.1)', //wplywa tez na kolor w legendzie
-            //ustawienia punktu
+            fill: false, 
+            backgroundColor : 'rgba(236,115,87,0.1)', 
             pointStyle : 'rectRot',
             pointRadius : 4,
             pointBorderWidth: 1,
             pointBackgroundColor : 'rgba(255, 107, 9, 1)',
-            //ustawienia punkut hover
             pointHoverRadius: 4,
             pointHoverBorderWidth: 3,
             pointHoverBackgroundColor: 'rgba(255,255,255,1)',
             pointHoverBorderColor: 'rgba(236,115,87,1)',
-            //data: [10,16,13,16,20],
             data: temperature
         },
         {
             label: "Humidity, %",
-            //linia
+            
             borderColor : 'rgba(9, 6, 235, 1)',
             pointBorderColor : 'rgba(9, 6, 235, 1)',
             borderWidth : 2,
-            //kolor tla i legendy
-            fill: false, //czy wypelnic zbior
-            //backgroundColor : 'rgba(236,115,87,0.1)', //wplywa tez na kolor w legendzie
-            //ustawienia punktu
+            fill: false, 
             pointStyle : 'rectRot',
             pointRadius : 4,
             pointBorderWidth: 1,
             pointBackgroundColor : 'rgba(9, 6, 235, 1)',
-            //ustawienia punktu hover
             pointHoverRadius: 4,
             pointHoverBorderWidth: 3,
             pointHoverBackgroundColor: 'rgba(9, 6, 235, 1)',
@@ -920,15 +853,13 @@ let data = {
             borderColor : 'rgba(31, 211, 221, 0.8)',
             pointBorderColor : 'rgba(31, 211, 221, 0.8)',
             borderWidth : 2,
-            //kolor tla i legendy
-            fill: false, //czy wypelnic zbior
-            backgroundColor : 'rgba(31, 211, 221, 0.8)', //wplywa tez na kolor w legendzie
-            //ustawienia punktu
+            fill: false, 
+            backgroundColor : 'rgba(31, 211, 221, 0.8)', 
+            
             pointStyle : 'rectRot',
             pointRadius : 4,
             pointBorderWidth: 1,
             pointBackgroundColor : 'rgba(31, 211, 221, 0.8)',
-            //ustawienia punkut hover
             pointHoverRadius: 4,
             pointHoverBorderWidth: 3,
             pointHoverBackgroundColor: 'rgba(31, 211, 221, 0.8)',
@@ -942,15 +873,12 @@ let data = {
           borderColor : 'rgba(188, 25, 161, 0.8)',
           pointBorderColor : 'rgba(188, 25, 161, 0.8)',
           borderWidth : 2,
-          //kolor tla i legendy
-          fill: false, //czy wypelnic zbior
-          backgroundColor : 'rgba(188, 25, 161, 0.8)', //wplywa tez na kolor w legendzie
-          //ustawienia punktu
+          fill: false, 
+          backgroundColor : 'rgba(188, 25, 161, 0.8)', 
           pointStyle : 'rectRot',
           pointRadius : 4,
           pointBorderWidth: 1,
           pointBackgroundColor : 'rgba(188, 25, 161, 0.8)',
-          //ustawienia punkut hover
           pointHoverRadius: 4,
           pointHoverBorderWidth: 3,
           pointHoverBackgroundColor: 'rgba(188, 25, 161, 0.8)',
@@ -964,10 +892,9 @@ let data = {
 let options = {
   maintainAspectRatio: false,
   
-  responsive: true, //responsywnosc
+  responsive: true, 
         hover: {
-            mode: 'dataset' //jak pokazywac tooltipy po najechaniu na punkty wykresu
-            //mode: 'label',
+            mode: 'dataset' 
         },
     
     
@@ -995,8 +922,8 @@ let options = {
         },
         
         legend: {
-            position: 'top', //polozenie legendy
-            display: true, // pokazuj legende
+            position: 'top', 
+            display: true, 
             labels: {
               color: 'violet',
               font: {
@@ -1015,7 +942,6 @@ let options = {
     scales: {
        
         x: {
-            //type: 'linear',
             display: true,
             title: {
               display: true,
