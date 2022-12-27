@@ -40,8 +40,6 @@ axios
     .catch((error) => console.log("Error:", error));
 
 
-//fasada projektowa AXIOS
-//tworzymy funkcję, która umozliwi podmiane fetcha na axiosa i odwrotnie
 axios({
   method: "get",
   url: "https://jsonplaceholder.typicode.com/posts",
@@ -56,8 +54,6 @@ axios({
 
 function requestXhr(settings) {
   return axios(settings);
-  // lub
-  // return fetch(settings);
 }
 
 
